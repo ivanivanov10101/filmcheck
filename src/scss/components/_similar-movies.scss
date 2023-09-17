@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+.similar-movies {
+  margin: 8rem 0;
+  padding: 3rem 0;
+  @include responsive(xsmall) {
+    margin: 4rem 0;
+    padding: 6rem 0;
+  }
+}

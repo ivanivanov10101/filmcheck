@@ -1,0 +1,67 @@
+@use "../abstracts" as *;
+
+.footer {
+  width: 100%;
+  margin-top: 8rem;
+  @include responsive(xsmall){
+    margin-top: 4rem;
+  }
+  &__container {
+    width: 100%;
+    &__block {
+      box-shadow: 1px 5px 150px black;
+      padding: 2rem;
+      background: #445566 linear-gradient(transparent, #3c4c5b);
+    }
+  }
+  &__intro {
+    &__img {
+      width: 15rem;
+      @include responsive(small){
+        width: 13rem;
+      }
+      @include responsive(xsmall){
+        width: 10rem;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+    &__msg {
+      font-size: 1.6rem;
+      color: #98aabb;
+      width: 80%;
+      line-height: 2.5rem;
+      @include responsive(xsmall){
+        width: 100%;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  &__ul {
+    list-style: none;
+    display: inline-flex;
+    &__li {
+      display: flex;
+      align-items: center;
+      color: #98aabb;
+      a {
+        text-decoration: none;
+        color: #98aabb;
+        display: block;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        margin-right: .5rem;
+        &:hover {
+          color: rgba(255, 255, 255, 0.71);
+        }
+      }
+    }
+  }
+}
+
+.footer-links {
+  margin: 1rem 0;
+}

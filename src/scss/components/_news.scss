@@ -1,0 +1,72 @@
+@use "../abstracts" as *;
+.news {
+  margin: 4rem 0;
+  @include responsive(xsmall) {
+    margin: 2rem 0;
+  }
+  &__block {
+    margin-top: 6rem;
+    @include responsive(xsmall) {
+      margin-top: 3rem;
+    }
+  }
+  &__card {
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 30px #000000;
+    margin-top: 5rem;
+    border-radius: 8px;
+    &__img {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        image-rendering: high-quality;
+      }
+    }
+    &__alt {
+      margin: 2rem;
+    }
+  }
+  &__body {
+    background: #445566;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.45rem;
+    white-space: pre-line;
+  }
+  &__author {
+    margin-top: 1.5rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
+    display: inline;
+    margin-right: 1rem;
+  }
+  &__text {
+    font-family: "Roboto Light", sans-serif;
+    padding: 1rem;
+  }
+  &__header {
+    padding-bottom: 1.5rem;
+  }
+}
+
+.card-and-alt {
+  width: 100%;
+  vertical-align: top;
+  text-align: center;
+  display: block;
+}
+
+.news-title-block {
+  position: relative;
+  background: #445566;
+  padding: 2rem;
+}
+
+.news-title-height {
+  min-height: 10rem;
+}

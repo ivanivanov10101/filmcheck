@@ -1,0 +1,26 @@
+@use"scss/base/base";
+@use "scss/utils/utils";
+
+//import scss components
+@use "scss/components/header";
+@use "scss/components/smallHeader";
+@use "scss/components/model";
+@use "scss/components/nav";
+@use "scss/components/toggle";
+@use "scss/components/movies";
+@use "scss/components/news";
+@use "scss/components/movieInfo";
+@use "scss/components/similar-movies";
+@use "scss/components/reviews";
+@use "scss/components/footer";
+
+@use "scss/layout/layout";
+
+@use "scss/abstracts/buttons";
+
+@use "scss/font";
+
+@use "scss/components/tabs";
+@use "scss/components/pagination";
+
+
