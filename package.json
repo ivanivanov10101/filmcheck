@@ -1,6 +1,7 @@
 {
   "name": "filmcheck",
   "version": "0.1.0",
+  "homepage": "https://ivanivanov10101.github.io/filmcheck",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -14,6 +15,7 @@
     "@testing-library/user-event": "^14.4.3",
     "classnames": "^2.3.2",
     "concurrently": "^8.2.1",
+    "gh-pages": "^1.1.0",
     "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -27,14 +29,15 @@
     "web-vitals": "^3.4.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "scss": "sass src/main.scss src/main.css --watch --no-source-map --style compressed",
     "dev": "concurrently \" npm start \" \" npm run scss \"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "precommit": "npx prettier --write .",
-    "postbuild": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css"
+    "precommit": "npx prettier --write ."
   },
   "eslintConfig": {
     "extends": [
