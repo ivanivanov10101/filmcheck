@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/filmcheck/static/css/main.20faa0a3.css",
+    "main.js": "/filmcheck/static/js/main.eff1d6ab.js",
+    "static/js/860.c8542fb6.chunk.js": "/filmcheck/static/js/860.c8542fb6.chunk.js",
+    "static/css/692.c78e1671.chunk.css": "/filmcheck/static/css/692.c78e1671.chunk.css",
+    "static/js/692.8df74848.chunk.js": "/filmcheck/static/js/692.8df74848.chunk.js",
+    "static/js/355.9c2b8608.chunk.js": "/filmcheck/static/js/355.9c2b8608.chunk.js",
+    "static/js/900.a662d5cd.chunk.js": "/filmcheck/static/js/900.a662d5cd.chunk.js",
+    "static/css/46.a6bd886c.chunk.css": "/filmcheck/static/css/46.a6bd886c.chunk.css",
+    "static/js/46.9217ed74.chunk.js": "/filmcheck/static/js/46.9217ed74.chunk.js",
+    "static/js/496.9ad5313f.chunk.js": "/filmcheck/static/js/496.9ad5313f.chunk.js",
+    "static/js/87.6940781d.chunk.js": "/filmcheck/static/js/87.6940781d.chunk.js",
+    "static/js/185.53a3adc7.chunk.js": "/filmcheck/static/js/185.53a3adc7.chunk.js",
+    "static/js/898.70fabc3a.chunk.js": "/filmcheck/static/js/898.70fabc3a.chunk.js",
+    "static/media/profile.jpg": "/filmcheck/static/media/profile.f2a14b909dc9fb1d27ef.jpg",
+    "static/media/Gilroy-ExtraBold.otf": "/filmcheck/static/media/Gilroy-ExtraBold.0094146a0505298ed06a.otf",
+    "static/media/Gilroy-Light.otf": "/filmcheck/static/media/Gilroy-Light.cc7ab55d27205bd64001.otf",
+    "index.html": "/filmcheck/index.html",
+    "main.20faa0a3.css.map": "/filmcheck/static/css/main.20faa0a3.css.map",
+    "main.eff1d6ab.js.map": "/filmcheck/static/js/main.eff1d6ab.js.map",
+    "860.c8542fb6.chunk.js.map": "/filmcheck/static/js/860.c8542fb6.chunk.js.map",
+    "692.c78e1671.chunk.css.map": "/filmcheck/static/css/692.c78e1671.chunk.css.map",
+    "692.8df74848.chunk.js.map": "/filmcheck/static/js/692.8df74848.chunk.js.map",
+    "355.9c2b8608.chunk.js.map": "/filmcheck/static/js/355.9c2b8608.chunk.js.map",
+    "900.a662d5cd.chunk.js.map": "/filmcheck/static/js/900.a662d5cd.chunk.js.map",
+    "46.a6bd886c.chunk.css.map": "/filmcheck/static/css/46.a6bd886c.chunk.css.map",
+    "46.9217ed74.chunk.js.map": "/filmcheck/static/js/46.9217ed74.chunk.js.map",
+    "496.9ad5313f.chunk.js.map": "/filmcheck/static/js/496.9ad5313f.chunk.js.map",
+    "87.6940781d.chunk.js.map": "/filmcheck/static/js/87.6940781d.chunk.js.map",
+    "185.53a3adc7.chunk.js.map": "/filmcheck/static/js/185.53a3adc7.chunk.js.map",
+    "898.70fabc3a.chunk.js.map": "/filmcheck/static/js/898.70fabc3a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20faa0a3.css",
+    "static/js/main.eff1d6ab.js"
+  ]
+}
