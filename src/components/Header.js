@@ -9,7 +9,7 @@ const Header = ({heading, paragraph, children, image}) => {
     })
     const navigate = useNavigate()
     const goToHome = () =>{
-        navigate('/');
+        navigate('/filmcheck/');
     }
     return(
         <div className="header">

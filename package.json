@@ -29,15 +29,15 @@
     "web-vitals": "^3.4.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b gh-pages -d build",
     "start": "react-scripts start",
     "scss": "sass src/main.scss src/main.css --watch --no-source-map --style compressed",
     "dev": "concurrently \" npm start \" \" npm run scss \"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "precommit": "npx prettier --write ."
+    "precommit": "npx prettier --write .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

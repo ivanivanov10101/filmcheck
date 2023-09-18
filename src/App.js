@@ -30,7 +30,7 @@ function App() {
                   <Nav/>
                   <HelmetProvider>
                     <Routes>
-                      <Route path='/' element={<Home/>}/>
+                      <Route path='/filmcheck/' element={<Home/>}/>
                       <Route exact path='/profile' element={<Profile/>}/>
                       <Route path='/films' element={<Films/>}/>
                       <Route path='/film/:id' element={<MovieEntry/>}/>
