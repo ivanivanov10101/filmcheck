@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {BrowserRouter as Router, createBrowserRouter, Route, Routes} from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ModelProvider from "./context/providers/ModelProvider";
 
@@ -15,12 +15,6 @@ import Profile from "./pages/Profile";
 import Films from "./pages/Films";
 import MovieEntry from "./pages/MovieEntry";
 import NewsEntry from "./components/news/NewsEntry";
-
-// const Home = lazy(() => import('./pages/Home'));
-// const MovieEntry = lazy(() => import('./pages/MovieEntry'));
-// const NewsEntry = lazy(() => import('./components/news/NewsEntry'));
-// const Profile = lazy(() => import('./pages/Profile'));
-// const Films = lazy(() => import('./pages/Films'));
 
 function App() {
   return (

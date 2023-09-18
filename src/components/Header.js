@@ -1,12 +1,10 @@
-import {useState} from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
+import poster from '../data/img.avif';
+import logo from '../data/logo.png';
 
 const Header = ({heading, paragraph, children, image}) => {
-    const [state] = useState({
-        poster: './assets/images/img.avif',
-        logo: './assets/images/logo.png',
-    })
+
     const navigate = useNavigate()
     const goToHome = () =>{
         navigate('/');
@@ -15,11 +13,11 @@ const Header = ({heading, paragraph, children, image}) => {
         <div className="header">
             <div className="container">
                 <div className="header__logo">
-                    <LazyLoadImage src={state.logo} alt="logoImage" onClick={goToHome}/>
+                    <LazyLoadImage src={logo} alt="logo mage" onClick={goToHome}/>
                 </div>
             </div>
             <div className="header__image moviePageImage">
-                {image ? <img src={image} alt={image}/> : <img src={state.poster} alt="poster" /> }
+                {image ? <img src={image} alt={image}/> : <img src={poster} alt="poster" /> }
             </div>
             <div className='header__contents'>
                 <div className='container'>
