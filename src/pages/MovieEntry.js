@@ -17,8 +17,6 @@ const MovieEntry = () => {
         dispatch({type: TYPES, payload: id });
         window.scrollTo(0, 0);
     },[dispatch, id]);
-
-
     return <>
         <Helmet>
             <title>{details.name}</title>

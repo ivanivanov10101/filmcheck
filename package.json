@@ -1,7 +1,7 @@
 {
   "name": "filmcheck",
   "version": "0.1.0",
-  "homepage": "https://ivanivanov10101.github.io/filmcheck",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -37,7 +37,7 @@
     "eject": "react-scripts eject",
     "precommit": "npx prettier --write .",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

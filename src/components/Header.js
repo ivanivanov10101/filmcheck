@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const Header = ({heading, paragraph, children, image}) => {
     const [state] = useState({
-        poster: '/assets/images/img.avif',
-        logo: '/assets/images/logo.png'
+        poster: './assets/images/img.avif',
+        logo: './assets/images/logo.png',
     })
     const navigate = useNavigate()
     const goToHome = () =>{
