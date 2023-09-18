@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, createBrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ModelProvider from "./context/providers/ModelProvider";
 
@@ -6,7 +6,7 @@ import NavProvider from "./context/providers/NavProvider";
 import Toggle from "./components/Toggle";
 import MoviesProvider from "./context/providers/MoviesProvider";
 import NewsProvider from "./context/providers/NewsProvider";
-import React, {lazy, Suspense} from "react";
+import React, {Suspense} from "react";
 import Nav from "./components/Nav";
 import LoadingSpinner from "./components/shared/LoadingSpinner";
 import SharedProvider from "./context/providers/SharedProvider";
