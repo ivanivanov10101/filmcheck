@@ -6,16 +6,21 @@ import NavProvider from "./context/providers/NavProvider";
 import Toggle from "./components/Toggle";
 import MoviesProvider from "./context/providers/MoviesProvider";
 import NewsProvider from "./context/providers/NewsProvider";
-import {lazy, Suspense} from "react";
+import React, {lazy, Suspense} from "react";
 import Nav from "./components/Nav";
 import LoadingSpinner from "./components/shared/LoadingSpinner";
 import SharedProvider from "./context/providers/SharedProvider";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Films from "./pages/Films";
+import MovieEntry from "./pages/MovieEntry";
+import NewsEntry from "./components/news/NewsEntry";
 
-const Home = lazy(() => import('./pages/Home'));
-const MovieEntry = lazy(() => import('./pages/MovieEntry'));
-const NewsEntry = lazy(() => import('./components/news/NewsEntry'));
-const Profile = lazy(() => import('./pages/Profile'));
-const Films = lazy(() => import('./pages/Films'));
+// const Home = lazy(() => import('./pages/Home'));
+// const MovieEntry = lazy(() => import('./pages/MovieEntry'));
+// const NewsEntry = lazy(() => import('./components/news/NewsEntry'));
+// const Profile = lazy(() => import('./pages/Profile'));
+// const Films = lazy(() => import('./pages/Films'));
 
 function App() {
   return (
