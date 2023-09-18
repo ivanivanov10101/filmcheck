@@ -9,7 +9,7 @@ const SmallHeader = ({heading, paragraph, children, image}) => {
   })
   const navigate = useNavigate()
   const goToHome = () =>{
-    navigate('/filmcheck/');
+    navigate('/');
   }
   return(
     <div className='small-header'>
