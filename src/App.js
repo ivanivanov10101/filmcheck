@@ -6,7 +6,7 @@ import NavProvider from "./context/providers/NavProvider";
 import Toggle from "./components/Toggle";
 import MoviesProvider from "./context/providers/MoviesProvider";
 import NewsProvider from "./context/providers/NewsProvider";
-import React, {Suspense} from "react";
+import React, {Suspense, useState} from "react";
 import Nav from "./components/Nav";
 import LoadingSpinner from "./components/shared/LoadingSpinner";
 import SharedProvider from "./context/providers/SharedProvider";
@@ -15,9 +15,17 @@ import Profile from "./pages/Profile";
 import Films from "./pages/Films";
 import MovieEntry from "./pages/MovieEntry";
 import NewsEntry from "./components/news/NewsEntry";
+import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true)
+  function toggleDarkMode() {
+    setDarkMode(prevDarkMode => !prevDarkMode)
+  }
   return (
+    <div className={`
+                    ${darkMode ? "dark" : "light"}`}
+    >
     <Router>
       <Suspense fallback={<div className="center"><LoadingSpinner/></div>}>
         <ModelProvider>
@@ -25,9 +33,11 @@ function App() {
             <NewsProvider>
               <MoviesProvider>
                 <SharedProvider>
-                  <Toggle/>
-                  <Nav/>
                   <HelmetProvider>
+                  <Toggle/>
+                  <Nav>
+                    <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
+                  </Nav>
                     <Routes>
                       <Route path='/' element={<Home/>}/>
                       <Route exact path='/profile' element={<Profile/>}/>
@@ -43,6 +53,7 @@ function App() {
         </ModelProvider>
       </Suspense>
     </Router>
+    </div>
   );
 }
 

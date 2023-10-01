@@ -1,6 +1,6 @@
 import {useContext, useState} from 'react';
-import SharedContext from '../../context/SharedContext';
-import ReviewBody from './ReviewBody';
+import SharedContext from '../context/SharedContext';
+import ReviewBody from './reviews/ReviewBody';
 
 const Reviews = () => {
     const [heading] = useState('Popular Reviews');

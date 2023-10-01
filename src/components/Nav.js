@@ -1,13 +1,13 @@
 import {Link} from 'react-router-dom';
 import NavContext from "../context/NavContext";
-import {useContext} from "react";
+import {Fragment, useContext} from "react";
 import {NAV_TOGGLE} from "../context/types/NavTypes";
 
-const Nav = () => {
+const Nav = ({children}) => {
     const {state,dispatch} = useContext(NavContext);
 
     return (
-        <>
+        <Fragment>
             {state ? <div className="navClass" onClick={()=> dispatch({type: NAV_TOGGLE })}></div>: ''}
             <div className={state ? 'nav nav--open' : 'nav nav--close'}>
                 <div className="nav__content">
@@ -20,9 +20,12 @@ const Nav = () => {
                     <li>
                         <Link onClick={()=> dispatch({type: NAV_TOGGLE })} to="/films">Films</Link>
                     </li>
+                    <li>
+                        {children}
+                    </li>
                 </div>
             </div>
-        </>
+        </Fragment>
     )
 }
 

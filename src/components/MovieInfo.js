@@ -54,14 +54,14 @@ const MovieInfo = ({details}) => {
               <LazyLoadImage src={details.image}/>
             </div>
           </div>
-          <div className="statsPositionButtons">
-            <div className="statsPositionMainButtons">
-              <button className="statsPositionMainButtonsAdd button-5"
+          <div>
+            <div className="stats-position-main-buttons">
+              <button className="button-5"
                       onClick={() => dispatch({type: OPEN_MODEL, payload: reviewModal})}>Add Review
               </button>
               <button className="button-6"><MoreVertIcon/></button>
             </div>
-            <div className="statsPositionSecondaryButtons">
+            <div className="stats-position-secondary-buttons">
               <button className="buttons button-6"><ShareIcon/></button>
               <button className="buttons button-6"><VisibilityIcon/></button>
               <button className="buttons button-6"><FavoriteIcon/></button>

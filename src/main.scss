@@ -3,7 +3,7 @@
 
 //import scss components
 @use "scss/components/header";
-@use "scss/components/smallHeader";
+@use "scss/components/small-header";
 @use "scss/components/model";
 @use "scss/components/nav";
 @use "scss/components/toggle";
@@ -19,8 +19,9 @@
 @use "scss/abstracts/buttons";
 
 @use "scss/font";
+@use "scss/utils/theme";
 
 @use "scss/components/tabs";
 @use "scss/components/pagination";
 
-
+@tailwind utilities;

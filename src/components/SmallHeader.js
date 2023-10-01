@@ -15,24 +15,11 @@ const SmallHeader = ({heading, paragraph, children, image}) => {
     <div className='small-header'>
       <div className='container'>
         <div className='small-header__logo'>
-          <LazyLoadImage src={state.logo} alt="logoImage" onClick={goToHome}/>
+          <LazyLoadImage src={state.logo} alt="logo-image" onClick={goToHome}/>
         </div>
       </div>
-      <div className='header__image moviePageImage'>
+      <div className='header__image'>
         {image ? <img src={image} alt={image}/> : <img src={state.poster} alt="poster" /> }
-      </div>
-      <div className='small-header__contents'>
-        <div className='container'>
-          <div className='small-header__contents__text'>
-            <div className='small-header__contents__text__child'>
-              <h1 className='small-header__contents__text__child__h1'>{heading}</h1>
-              <p className='small-header__contents__text__child__p'>{paragraph}</p>
-              <div className='small-header__contents__text__child__link'>
-                {children}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   )

@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import {useState, useContext, useEffect} from 'react';
+import {useState, useContext, useEffect, Fragment} from 'react';
 import { Helmet } from "react-helmet-async";
 import Model from "../components/Model";
 import ModelContext from "../context/ModelContext";
@@ -9,7 +9,7 @@ import Login from "../auth/Login";
 import Movies from "../components/Movies";
 import NewsFeed from "../components/news/NewsFeed";
 import Footer from "../components/footer/Footer";
-import Reviews from "../components/reviews/Reviews";
+import Reviews from "../components/Reviews";
 
 const Home = () => {
   const {dispatch} = useContext(ModelContext);
@@ -24,7 +24,7 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <>
+    <Fragment>
       <Helmet>
         <title>FilmCheck - The Social Media for Film Nerds</title>
         <meta name="description" content="The Social Media for Film Nerds"/>
@@ -39,7 +39,7 @@ const Home = () => {
       <Reviews/>
       <NewsFeed/>
       <Footer/>
-    </>
+    </Fragment>
   )
 }
 

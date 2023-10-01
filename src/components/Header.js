@@ -13,10 +13,10 @@ const Header = ({heading, paragraph, children, image}) => {
         <div className="header">
             <div className="container">
                 <div className="header__logo">
-                    <LazyLoadImage src={logo} alt="logo mage" onClick={goToHome}/>
+                    <LazyLoadImage src={logo} alt="logo-image" onClick={goToHome}/>
                 </div>
             </div>
-            <div className="header__image moviePageImage">
+            <div className="header__image">
                 {image ? <img src={image} alt={image}/> : <img src={poster} alt="poster" /> }
             </div>
             <div className='header__contents'>

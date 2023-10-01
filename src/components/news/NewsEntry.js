@@ -1,4 +1,4 @@
-import {useContext, useEffect} from "react";
+import {Fragment, useContext, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import {Helmet} from "react-helmet-async";
 import Footer from "../footer/Footer";
@@ -16,7 +16,7 @@ const NewsEntry = () => {
     dispatch({type: TYPES, payload: id });
     window.scrollTo(0, 0);
   },[dispatch, id]);
-  return <>
+  return <Fragment>
     <Helmet>
       <title>{details.name}</title>
     </Helmet>
@@ -25,7 +25,7 @@ const NewsEntry = () => {
     </Header>
     <NewsBody details={details}/>
     <Footer/>
-  </>
+  </Fragment>
 }
 
 export default NewsEntry;

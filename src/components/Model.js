@@ -11,7 +11,7 @@ const Model  = (props) =>{
         }
     }
     return state.modelStatus && state.current === props.current ? (<div className='model' onClick={close}>
-            <div className='model__body'  >
+            <div className='model__body'>
                 {props.children}
             </div>
         </div>):

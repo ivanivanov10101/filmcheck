@@ -1,4 +1,4 @@
-import {useContext, useEffect} from "react";
+import {Fragment, useContext, useEffect} from "react";
 import MovieContext from "../context/MovieContext";
 import {useParams} from "react-router-dom";
 import {Helmet} from "react-helmet-async";
@@ -17,7 +17,7 @@ const MovieEntry = () => {
         dispatch({type: TYPES, payload: id });
         window.scrollTo(0, 0);
     },[dispatch, id]);
-    return <>
+    return <Fragment>
         <Helmet>
             <title>{details.name}</title>
         </Helmet>
@@ -27,7 +27,7 @@ const MovieEntry = () => {
         <MovieInfo details={details}/>
         <MovieRecEntry cities={filteredMovies} name={details.name}/>
         <Footer/>
-    </>
+    </Fragment>
 }
 
 export default MovieEntry;

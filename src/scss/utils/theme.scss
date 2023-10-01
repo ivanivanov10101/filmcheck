@@ -1,0 +1,42 @@
+@use "../abstracts" as *;
+
+.dark {
+  .nav {
+    background: rgb(27, 36, 38);
+
+  }
+  .nav__content {
+    li {
+      a {
+        color: white;
+      }
+    }
+  }
+
+}
+
+.light {
+  color: black;
+  background-color: white;
+  .header__image {
+    box-shadow: 0 3px 55px 1px black;
+  }
+  .movies__card {
+    box-shadow: rgba(50, 50, 93, 0.53) 0 4px 15px -1px, rgba(0, 0, 0, 0.3) 0px 3px 5px -1px;
+  }
+  .reviews__body {
+    box-shadow: rgba(50, 50, 93, 0.53) 0 4px 15px -1px, rgba(0, 0, 0, 0.3) 0px 3px 5px -1px;
+  }
+  .reviews__body__contents__info__name {
+    color: white;
+  }
+  .footer__container__block {
+    box-shadow: 1px 5px 25px black;
+  }
+}
+
+.theme-toggle {
+  @include position(absolute, null, null, 0, null, null, null);
+  margin-left: 30%;
+}
+
