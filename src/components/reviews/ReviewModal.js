@@ -1,9 +1,9 @@
 import {useContext, useState} from "react";
-import ModelContext from "../../context/ModelContext";
-import {OPEN_MODEL} from "../../context/types/ModelTypes";
+import ModalContext from "../../context/ModalContext";
+import {OPEN_MODAL} from "../../context/types/ModalTypes";
 
 const ReviewModal = (props) => {
-  const {dispatch} = useContext(ModelContext);
+  const {dispatch} = useContext(ModalContext);
   const [state, setState] = useState({
     review:''
   });
@@ -26,7 +26,7 @@ const ReviewModal = (props) => {
     </div>
     <div className='group model__row'>
       <input type="submit" name="" className="btn-dark" value="Submit"/>
-      <span className="already-exists" onClick={()=> dispatch({type: OPEN_MODEL, payload: props.currentModel})}>Submit</span>
+      <span className="already-exists" onClick={()=> dispatch({type: OPEN_MODAL, payload: props.currentModel})}>Submit</span>
     </div>
   </form>)
 }

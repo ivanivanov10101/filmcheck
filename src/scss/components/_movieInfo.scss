@@ -3,6 +3,7 @@
 .movie-info {
   margin: -15rem 0 3rem;
   background-image: linear-gradient(to bottom, rgb(38, 47, 51), rgba(255,255,255,0));
+
   @include responsive(xsmall){
     margin: -15rem 0 1rem;
   }

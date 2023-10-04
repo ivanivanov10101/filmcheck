@@ -1,13 +1,13 @@
 import {useContext} from "react";
-import ModelContext from "../context/ModelContext";
-import {CLOSE_MODEL} from "../context/types/ModelTypes";
+import ModalContext from "../context/ModalContext";
+import {CLOSE_MODAL} from "../context/types/ModalTypes";
 
 const Model  = (props) =>{
-    const {state, dispatch} = useContext(ModelContext);
+    const {state, dispatch} = useContext(ModalContext);
 
     const close = (e) => {
         if(e.target.getAttribute('class') === 'model'){
-            dispatch({type: CLOSE_MODEL});
+            dispatch({type: CLOSE_MODAL});
         }
     }
     return state.modelStatus && state.current === props.current ? (<div className='model' onClick={close}>

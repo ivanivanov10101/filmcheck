@@ -1,9 +1,9 @@
 import {useContext, useState} from "react";
-import ModelContext from "../context/ModelContext";
-import {OPEN_MODEL} from "../context/types/ModelTypes";
+import ModalContext from "../context/ModalContext";
+import {OPEN_MODAL} from "../context/types/ModalTypes";
 
 const Login = (props) =>{
-    const {dispatch} = useContext(ModelContext);
+    const {dispatch} = useContext(ModalContext);
     const [state, setState] = useState({
         email: '',
         password:''
@@ -38,7 +38,7 @@ const Login = (props) =>{
         </div>
         <div className='group model__row'>
             <input type="submit" name="" className="btn-dark" value="Continue"/>
-            <span onClick={()=> dispatch({type: OPEN_MODEL, payload: props.currentModel})}> Create New Account</span>
+            <span onClick={()=> dispatch({type: OPEN_MODAL, payload: props.currentModel})}> Create New Account</span>
         </div>
     </form>)
 }

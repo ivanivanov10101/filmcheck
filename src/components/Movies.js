@@ -6,10 +6,10 @@ const Movies = () => {
     const {moviesData: {movies}} = useContext(MovieContext);
     const [heading] = useState('Currently Popular');
 
-    const [state] = useState({
+    const state = {
         heading: "Discover and share your experience about countless movie classics.",
         paragraph: "Pick up a camera. Shoot something. No matter how small, no matter how cheesy, no matter whether your friends and your sister star in it. Put your name on it as director. Now you're a director. Everything after that you're just negotiating your budget and your fee. \n --James Cameron",
-    })
+    }
     return (
         <div className="movies">
             <div className="container">

@@ -8,15 +8,15 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import {OPEN_MODEL} from "../context/types/ModelTypes";
+import {OPEN_MODAL} from "../context/types/ModalTypes";
 import {useContext, useState} from "react";
-import ModelContext from "../context/ModelContext";
+import ModalContext from "../context/ModalContext";
 import Model from "./Model";
 import ReviewModal from "./reviews/ReviewModal";
 import ReviewModalSubmitted from "./reviews/ReviewModalSubmitted";
 
 const MovieInfo = ({details}) => {
-  const {dispatch} = useContext(ModelContext);
+  const {dispatch} = useContext(ModalContext);
   const [reviewModal] = useState('reviewModal');
   const [reviewModalSubmitted] = useState('reviewModalSubmitted');
   const rating = (number) => {
@@ -57,7 +57,7 @@ const MovieInfo = ({details}) => {
           <div>
             <div className="stats-position-main-buttons">
               <button className="button-5"
-                      onClick={() => dispatch({type: OPEN_MODEL, payload: reviewModal})}>Add Review
+                      onClick={() => dispatch({type: OPEN_MODAL, payload: reviewModal})}>Add Review
               </button>
               <button className="button-6"><MoreVertIcon/></button>
             </div>
