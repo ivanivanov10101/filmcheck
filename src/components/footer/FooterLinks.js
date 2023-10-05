@@ -1,15 +1,14 @@
-import { useState } from 'react';
 import ShowFooterLinks from "./ShowFooterLinks";
 
 const FooterLinks = () => {
 
-    const [state] = useState({
+    const state = {
         pages: [
             { id: 1, name: 'Home', route: '/' },
             { id: 2, name: 'Profile', route: '/profile'},
             { id: 3, name: 'Films', route: '/films'},
         ],
-    });
+    };
     const {pages} = state;
     return (
         <div className="row">

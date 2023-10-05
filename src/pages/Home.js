@@ -3,7 +3,7 @@ import {useState, useContext, useEffect, Fragment} from 'react';
 import { Helmet } from "react-helmet-async";
 import Model from "../components/Model";
 import ModalContext from "../context/ModalContext";
-import { OPEN_MODAL } from "../context/types/ModalTypes";
+import { OPEN_MODEL } from "../context/types/ModelTypes";
 import Register from "../auth/Register";
 import Login from "../auth/Login";
 import Movies from "../components/Movies";
@@ -31,7 +31,7 @@ const Home = () => {
         <meta name='keywords' content='films, movies, fans, actors'/>
       </Helmet>
       <Header heading={state.heading} paragraph={state.paragraph}>
-        <button className="btn-default"  onClick={()=> dispatch({type: OPEN_MODAL, payload: registerModel})}>Register</button>
+        <button className="btn-default"  onClick={()=> dispatch({type: OPEN_MODEL, payload: registerModel})}>Register</button>
       </Header>
       <Model current={registerModel}><Register currentModel={loginModel}/> </Model>
       <Model current={loginModel}><Login currentModel={registerModel} /> </Model>

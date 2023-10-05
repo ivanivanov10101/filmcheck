@@ -1,10 +1,10 @@
 import {useReducer} from "react";
 import ModalContext from "../ModalContext";
-import ModalReducer from "../reducers/ModalReducer";
+import ModelReducer from "../reducers/ModelReducer";
 const ModalProvider = (props) => {
 
-    const [state, dispatch] = useReducer(ModalReducer, {
-        modelStatus: false,
+    const [state, dispatch] = useReducer(ModelReducer, {
+        modalStatus: false,
         current: '',
     }, undefined);
 

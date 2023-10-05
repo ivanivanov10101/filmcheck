@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import NewsBlock from "./NewsBlock";
 import newsContext from "../../context/NewsContext";
 
@@ -6,7 +6,7 @@ const NewsFeed = () => {
     const {
         newsData: { news },
     } = useContext(newsContext);
-    const [heading] = useState('Film news from around the world');
+    const heading = 'Film news from around the world';
     return (
         <div className="news">
             <div className="container">

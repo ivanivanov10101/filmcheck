@@ -1,4 +1,4 @@
-const ReviewModalSubmitted = (props) =>{
+const ReviewModelSubmitted = (props) =>{
   const loginForm = (e) =>{
     e.preventDefault();
   }
@@ -9,4 +9,4 @@ const ReviewModalSubmitted = (props) =>{
   </form>)
 }
 
-export default ReviewModalSubmitted;
+export default ReviewModelSubmitted;

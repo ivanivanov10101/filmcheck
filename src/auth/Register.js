@@ -1,6 +1,6 @@
 import {useContext, useState} from "react";
 import ModalContext from "../context/ModalContext";
-import {OPEN_MODAL} from "../context/types/ModalTypes";
+import {OPEN_MODEL} from "../context/types/ModelTypes";
 
 const Register = (props) => {
     const {dispatch} = useContext(ModalContext);
@@ -48,7 +48,7 @@ const Register = (props) => {
         </div>
         <div className='group model__row'>
             <input type="submit" name="" className="btn-dark" value="Sign Up"/>
-            <span className="already-exists" onClick={()=> dispatch({type: OPEN_MODAL, payload: props.currentModel})}>User Already Exists? Login </span>
+            <span className="already-exists" onClick={()=> dispatch({type: OPEN_MODEL, payload: props.currentModel})}>User Already Exists? Login </span>
         </div>
         </form>)
 }

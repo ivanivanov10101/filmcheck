@@ -8,12 +8,12 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import {OPEN_MODAL} from "../context/types/ModalTypes";
+import {OPEN_MODEL} from "../context/types/ModelTypes";
 import {useContext, useState} from "react";
 import ModalContext from "../context/ModalContext";
 import Model from "./Model";
-import ReviewModal from "./reviews/ReviewModal";
-import ReviewModalSubmitted from "./reviews/ReviewModalSubmitted";
+import ReviewModel from "./reviews/ReviewModel";
+import ReviewModelSubmitted from "./reviews/ReviewModelSubmitted";
 
 const MovieInfo = ({details}) => {
   const {dispatch} = useContext(ModalContext);
@@ -57,7 +57,7 @@ const MovieInfo = ({details}) => {
           <div>
             <div className="stats-position-main-buttons">
               <button className="button-5"
-                      onClick={() => dispatch({type: OPEN_MODAL, payload: reviewModal})}>Add Review
+                      onClick={() => dispatch({type: OPEN_MODEL, payload: reviewModal})}>Add Review
               </button>
               <button className="button-6"><MoreVertIcon/></button>
             </div>
@@ -92,8 +92,8 @@ const MovieInfo = ({details}) => {
           <div className="stats movieTabs">
             <MovieTabs details={details}/>
           </div>
-          <Model current={reviewModal}><ReviewModal currentModel={reviewModalSubmitted}/> </Model>
-          <Model current={reviewModalSubmitted}><ReviewModalSubmitted currentModel={reviewModal}/> </Model>
+          <Model current={reviewModal}><ReviewModel currentModel={reviewModalSubmitted}/> </Model>
+          <Model current={reviewModalSubmitted}><ReviewModelSubmitted currentModel={reviewModal}/> </Model>
         </div>
       </div>
     </div>
