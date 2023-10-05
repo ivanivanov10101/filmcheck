@@ -1,5 +1,5 @@
 import {createContext} from "react";
 
-const NewsContext = createContext(undefined, undefined);
+const NewsContext = createContext(undefined);
 
 export default NewsContext;

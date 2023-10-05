@@ -1,5 +1,5 @@
 import {createContext} from "react";
 
-const NavContext = createContext(undefined, undefined);
+const NavContext = createContext(undefined);
 
 export default NavContext;

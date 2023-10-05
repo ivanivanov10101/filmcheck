@@ -48,10 +48,10 @@
 .heading {
   font-size: 2rem;
   font-weight: 400;
-  background: $mainColor1;
+  background: #63d052;
   background-clip: text;
   color: transparent;
-  border-bottom: 1px solid $mainColor1;
+  border-bottom: 1px solid #63d052;
   padding-bottom: 1rem;
   @include responsive(xsmall){
     font-size: 1.8rem;

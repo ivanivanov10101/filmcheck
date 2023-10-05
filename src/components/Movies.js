@@ -1,10 +1,10 @@
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import MovieContext from "../context/MovieContext";
 import MovieList from "./MovieList";
 
 const Movies = () => {
     const {moviesData: {movies}} = useContext(MovieContext);
-    const [heading] = useState('Currently Popular');
+    const heading = 'Currently Popular';
 
     const state = {
         heading: "Discover and share your experience about countless movie classics.",

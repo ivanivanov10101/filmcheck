@@ -17,13 +17,13 @@
     right: 1.5rem;
   }
   span:nth-child(1){
-      @include toggleSpanStyle($mainColor2, 3rem, .3rem, null);
+      @include toggleSpanStyle(#17ea11, 3rem, .3rem, null);
   }
   span:nth-child(2){
-    @include toggleSpanStyle($mainColor2, 3rem, .3rem, .5rem);
+    @include toggleSpanStyle(#17ea11, 3rem, .3rem, .5rem);
   }
   span:nth-child(3){
-    @include toggleSpanStyle($mainColor2, 3rem, .3rem, .5rem);
+    @include toggleSpanStyle(#17ea11, 3rem, .3rem, .5rem);
   }
 }
 
@@ -44,14 +44,14 @@
     right: 1.5rem;
   }
   span:nth-child(1){
-    @include toggleSpanStyle($mainColor2, 3rem, 1.5px, .5rem);
+    @include toggleSpanStyle(#17ea11, 3rem, 1.5px, .5rem);
     transform: rotate(-45deg) translateY(.5rem);
   }
   span:nth-child(2){
     display: none;
   }
   span:nth-child(3){
-    @include toggleSpanStyle($mainColor2, 3rem, 1.5px, .5rem);
+    @include toggleSpanStyle(#17ea11, 3rem, 1.5px, .5rem);
     transform: rotate(45deg) translateY(-.5rem);
   }
 }

@@ -33,7 +33,7 @@
         &:before {
           @include position(absolute, 0,0, 0, 0,100%, 100%);
           content: "";
-          background: linear-gradient(to right, $mainColor1, $mainColor2);
+          background: linear-gradient(to right, #63d052, #17ea11);
           z-index: -1;
           transform: scale(0);
           transition: all .3s linear;
