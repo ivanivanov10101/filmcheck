@@ -2,7 +2,7 @@
 
 .footer {
   width: 100%;
-  @include responsive(xsmall){
+  @include responsive(xsmall) {
     margin-top: 4rem;
   }
   &__container {
@@ -16,10 +16,10 @@
   &__intro {
     &__img {
       width: 15rem;
-      @include responsive(small){
+      @include responsive(small) {
         width: 13rem;
       }
-      @include responsive(xsmall){
+      @include responsive(xsmall) {
         width: 10rem;
       }
       img {
@@ -33,7 +33,7 @@
       color: #98aabb;
       width: 80%;
       line-height: 2.5rem;
-      @include responsive(xsmall){
+      @include responsive(xsmall) {
         width: 100%;
         font-size: 1.4rem;
       }
@@ -52,7 +52,7 @@
         display: block;
         font-size: 1.5rem;
         text-transform: capitalize;
-        margin-right: .5rem;
+        margin-right: 0.5rem;
         &:hover {
           color: rgba(255, 255, 255, 0.71);
         }

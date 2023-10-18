@@ -1,6 +1,6 @@
-import {BsFillStarFill, BsStar} from "react-icons/bs";
+import { BsFillStarFill, BsStar } from "react-icons/bs";
 
-const MovieRating = ({details}) => {
+const MovieRating = ({ details }) => {
   const rating = (number) => {
     const maxStars = 5;
     let container = [];
@@ -10,18 +10,18 @@ const MovieRating = ({details}) => {
           <BsFillStarFill
             key={i}
             size={26}
-            color='#18c50f'
-            className='reviews__body__contents__info__rating__icon'
-          />
+            color="#18c50f"
+            className="reviews__body__contents__info__rating__icon"
+          />,
         );
       } else {
         container.push(
           <BsStar
             key={i}
             size={26}
-            color='#18c50f'
-            className='reviews__body__contents__info__rating__icon'
-          />
+            color="#18c50f"
+            className="reviews__body__contents__info__rating__icon"
+          />,
         );
       }
     }
@@ -29,10 +29,12 @@ const MovieRating = ({details}) => {
   };
   return (
     <div className="stats-position-rating">
-      <div className="stats-position-rating__stars score">{rating(details.rating)}</div>
+      <div className="stats-position-rating__stars score">
+        {rating(details.rating)}
+      </div>
       <div className="stats-position-rating-number score">{details.rating}</div>
     </div>
-  )
-}
+  );
+};
 
 export default MovieRating;

@@ -1,7 +1,7 @@
-import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
-import '../../scss/components/_tabs.scss';
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "../../scss/components/_tabs.scss";
 
-const MovieTabs = ({details}) => {
+const MovieTabs = ({ details }) => {
   return (
     <Tabs>
       <TabList>

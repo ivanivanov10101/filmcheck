@@ -1,6 +1,5 @@
 @use "../abstracts" as *;
 .App {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +13,7 @@
   background: #053742;
   margin: 3.5rem auto 1.5rem;
   padding: 2rem 1rem;
-  color: #E8F0F2;
+  color: #e8f0f2;
   border-radius: 0.45rem;
 }
 
@@ -66,7 +65,6 @@
 
 .react-tabs__tab-panel {
   display: none;
-
 }
 
 .react-tabs__tab-panel--selected {

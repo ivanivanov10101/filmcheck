@@ -7,35 +7,34 @@
 }
 
 @for $i from 1 through 12 {
-  .col-#{$i}{
+  .col-#{$i} {
     width: math.div(100%, 12) * $i;
     @if $i == 6 {
-      @include responsive(small){
+      @include responsive(small) {
         width: 100%;
-
       }
     }
     @if $i == 3 {
-      @include responsive(medium){
+      @include responsive(medium) {
         width: math.div(100%, 12) * 4;
       }
-      @include responsive(small){
+      @include responsive(small) {
         width: 50%;
       }
-      @include responsive(xsmall){
+      @include responsive(xsmall) {
         width: 100%;
       }
     }
     @if $i == 4 {
-      @include responsive(medium){
+      @include responsive(medium) {
         width: 50%;
       }
-      @include responsive(xsmall){
+      @include responsive(xsmall) {
         width: 100%;
       }
     }
     @if $i == 8 {
-      @include responsive(medium){
+      @include responsive(medium) {
         width: 100%;
       }
     }

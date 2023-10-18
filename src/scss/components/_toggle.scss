@@ -1,57 +1,57 @@
 @use "../abstracts" as *;
 
-.toggle-open{
-  @include position(fixed, 4rem, null,null, 3rem, null, null);
+.toggle-open {
+  @include position(fixed, 4rem, null, null, 3rem, null, null);
   cursor: pointer;
   z-index: 5;
-  @include responsive(large){
+  @include responsive(large) {
     right: 5rem;
   }
-  @include responsive(medium){
+  @include responsive(medium) {
     right: 4rem;
   }
-  @include responsive(small){
+  @include responsive(small) {
     right: 2rem;
   }
-  @include responsive(xsmall){
+  @include responsive(xsmall) {
     right: 1.5rem;
   }
-  span:nth-child(1){
-      @include toggleSpanStyle(#17ea11, 3rem, .3rem, null);
+  span:nth-child(1) {
+    @include toggleSpanStyle(#17ea11, 3rem, 0.3rem, null);
   }
-  span:nth-child(2){
-    @include toggleSpanStyle(#17ea11, 3rem, .3rem, .5rem);
+  span:nth-child(2) {
+    @include toggleSpanStyle(#17ea11, 3rem, 0.3rem, 0.5rem);
   }
-  span:nth-child(3){
-    @include toggleSpanStyle(#17ea11, 3rem, .3rem, .5rem);
+  span:nth-child(3) {
+    @include toggleSpanStyle(#17ea11, 3rem, 0.3rem, 0.5rem);
   }
 }
 
-.toggle-close{
-  @include position(fixed, 4rem, null,null, 3rem, null, null);
+.toggle-close {
+  @include position(fixed, 4rem, null, null, 3rem, null, null);
   cursor: pointer;
   z-index: 5;
-  @include responsive(large){
+  @include responsive(large) {
     right: 5rem;
   }
-  @include responsive(medium){
+  @include responsive(medium) {
     right: 4rem;
   }
-  @include responsive(small){
+  @include responsive(small) {
     right: 2rem;
   }
-  @include responsive(xsmall){
+  @include responsive(xsmall) {
     right: 1.5rem;
   }
-  span:nth-child(1){
-    @include toggleSpanStyle(#17ea11, 3rem, 1.5px, .5rem);
-    transform: rotate(-45deg) translateY(.5rem);
+  span:nth-child(1) {
+    @include toggleSpanStyle(#17ea11, 3rem, 1.5px, 0.5rem);
+    transform: rotate(-45deg) translateY(0.5rem);
   }
-  span:nth-child(2){
+  span:nth-child(2) {
     display: none;
   }
-  span:nth-child(3){
-    @include toggleSpanStyle(#17ea11, 3rem, 1.5px, .5rem);
-    transform: rotate(45deg) translateY(-.5rem);
+  span:nth-child(3) {
+    @include toggleSpanStyle(#17ea11, 3rem, 1.5px, 0.5rem);
+    transform: rotate(45deg) translateY(-0.5rem);
   }
 }

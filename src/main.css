@@ -644,7 +644,12 @@ body {
   position: relative;
   box-shadow: 0 0 30px #000000;
   background-clip: padding-box;
-  background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0) 0, hsla(0, 0%, 100%, 0.5) 50%, hsla(0, 0%, 100%, 0));
+  background-image: linear-gradient(
+    90deg,
+    hsla(0, 0%, 100%, 0) 0,
+    hsla(0, 0%, 100%, 0.5) 50%,
+    hsla(0, 0%, 100%, 0)
+  );
   background-repeat: no-repeat;
   background-size: 100% 1px;
   border-radius: 8px;
@@ -788,7 +793,11 @@ body {
 
 .movie-info {
   margin: -15rem 0 3rem;
-  background-image: linear-gradient(to bottom, rgb(38, 47, 51), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(
+    to bottom,
+    rgb(38, 47, 51),
+    rgba(255, 255, 255, 0)
+  );
 }
 @media (max-width: 36em) {
   .movie-info {
@@ -901,7 +910,14 @@ body {
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    system-ui,
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
   font-size: 16px;
   font-weight: 600;
   justify-content: center;
@@ -974,7 +990,7 @@ body {
 }
 
 .button-6:active {
-  background-color: #F0F0F1;
+  background-color: #f0f0f1;
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   color: rgba(0, 0, 0, 0.65);
@@ -1303,11 +1319,15 @@ body {
 
 @font-face {
   font-family: "Gilroy";
-  src: local("Gilroy"), url("./fonts/Gilroy-ExtraBold.otf") format("otf");
+  src:
+    local("Gilroy"),
+    url("./fonts/Gilroy-ExtraBold.otf") format("otf");
 }
 @font-face {
   font-family: "Gilroy Light";
-  src: local("Gilroy Light"), url("./fonts/Gilroy-Light.otf") format("otf");
+  src:
+    local("Gilroy Light"),
+    url("./fonts/Gilroy-Light.otf") format("otf");
 }
 .App {
   display: flex;
@@ -1323,7 +1343,7 @@ body {
   background: #053742;
   margin: 3.5rem auto 1.5rem;
   padding: 2rem 1rem;
-  color: #E8F0F2;
+  color: #e8f0f2;
   border-radius: 0.45rem;
 }
 

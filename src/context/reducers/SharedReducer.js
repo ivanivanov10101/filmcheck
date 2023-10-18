@@ -1,6 +1,5 @@
-
-const SharedReducer = (state, action) =>{
-    return state;
-}
+const SharedReducer = (state, action) => {
+  return state;
+};
 
 export default SharedReducer;

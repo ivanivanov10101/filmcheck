@@ -1,12 +1,12 @@
-import React, {Fragment, useMemo, useState} from "react";
+import React, { Fragment, useMemo, useState } from "react";
 import MovieList from "../components/MovieList";
 import Pagination from "../components/page-elements/Pagination";
-import {allmovies} from "../data/allmovies";
+import { allmovies } from "../data/allmovies";
 import SmallHeader from "../components/SmallHeader";
 import Footer from "../components/footer/Footer";
 
 const Films = () => {
-  const [heading] = useState('Currently Popular');
+  const [heading] = useState("Currently Popular");
 
   const [currentPage, setCurrentPage] = useState(1);
   let EntryAmount = 16;
@@ -19,15 +19,12 @@ const Films = () => {
 
   return (
     <Fragment>
-      <SmallHeader/>
+      <SmallHeader />
       <div className="container movies__block">
-        <h2 className='heading'>{heading}</h2>
-        <div className='row ml-minus-15 mr-minus-15'>
+        <h2 className="heading">{heading}</h2>
+        <div className="row ml-minus-15 mr-minus-15">
           {currentTableData.map((film) => (
-            <MovieList
-              movie={film}
-              key={film.id}
-            />
+            <MovieList movie={film} key={film.id} />
           ))}
         </div>
         <Pagination
@@ -35,13 +32,12 @@ const Films = () => {
           currentPage={currentPage}
           totalCount={allmovies.length}
           pageSize={EntryAmount}
-          onPageChange={page => setCurrentPage(page)}
+          onPageChange={(page) => setCurrentPage(page)}
         />
       </div>
-      <Footer/>
+      <Footer />
     </Fragment>
-
-  )
-}
+  );
+};
 
 export default Films;

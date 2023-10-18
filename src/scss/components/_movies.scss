@@ -21,10 +21,10 @@
     &::after {
       position: absolute;
       content: "";
-      bottom: -.5rem;
+      bottom: -0.5rem;
       left: 0;
       width: 40%;
-      height: .2rem;
+      height: 0.2rem;
       background: $mainColor1;
       @include responsive(large) {
         width: 50%;
@@ -50,7 +50,12 @@
     position: relative;
     box-shadow: 0 0 30px black;
     background-clip: padding-box;
-    background-image: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.5) 50%,hsla(0,0%,100%,0));
+    background-image: linear-gradient(
+      90deg,
+      hsla(0, 0%, 100%, 0) 0,
+      hsla(0, 0%, 100%, 0.5) 50%,
+      hsla(0, 0%, 100%, 0)
+    );
     background-repeat: no-repeat;
     background-size: 100% 1px;
     border-radius: 8px;
@@ -69,13 +74,13 @@
       @include position(absolute, 0, 0, 0, 0, 100%, 100%);
       @include align(flex, null, flex-end, null);
       background: linear-gradient(to bottom, transparent 50%, $black);
-      padding :2rem;
+      padding: 2rem;
       color: $white;
       &__content {
         @include align(flex, null, center, null);
         &__movie {
           font-size: 1.5rem;
-          margin-left: .4rem;
+          margin-left: 0.4rem;
           text-shadow: 1.5px 1.5px 1.5px black;
           &__link {
             color: white;
@@ -90,14 +95,13 @@
       @include align(flex, center, center, null);
       visibility: hidden;
       transform: scale(0);
-      transition: all .1s linear;
+      transition: all 0.1s linear;
     }
     &:hover &__info {
       visibility: visible;
       transform: scale(1.3);
     }
   }
-
 }
 
 .flex {

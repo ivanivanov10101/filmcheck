@@ -4,36 +4,36 @@
   max-width: 1200px;
   margin: auto;
   padding: 0 1.5rem;
-  @include responsive(large){
+  @include responsive(large) {
     max-width: 100%;
     padding: 0 5rem;
   }
-  @include responsive(medium){
+  @include responsive(medium) {
     max-width: 100%;
     padding: 0 4rem;
   }
-  @include responsive(small){
+  @include responsive(small) {
     max-width: 100%;
     padding: 0 2rem;
   }
-  @include responsive(xsmall){
+  @include responsive(xsmall) {
     max-width: 100%;
     padding: 0 1.5rem;
   }
 }
 
-.group{
+.group {
   margin-bottom: 1.3rem;
-  span{
+  span {
     font-size: 1.5rem;
     cursor: pointer;
   }
-  &__control{
-      @include control(5rem, 0, 1.5rem, $lightSilver-45);
+  &__control {
+    @include control(5rem, 0, 1.5rem, $lightSilver-45);
   }
 }
 
-.p-15{
+.p-15 {
   padding: 1.5rem;
 }
 
@@ -41,7 +41,7 @@
   margin-right: -1.5rem;
 }
 
-.ml-minus-15{
+.ml-minus-15 {
   margin-left: -1.5rem;
 }
 
@@ -53,7 +53,7 @@
   color: transparent;
   border-bottom: 1px solid #63d052;
   padding-bottom: 1rem;
-  @include responsive(xsmall){
+  @include responsive(xsmall) {
     font-size: 1.8rem;
   }
 }
