@@ -584,6 +584,7 @@ body {
 .movies {
   margin: 4rem 0;
 }
+
 @media (max-width: 36em) {
   .movies {
     margin: 2rem 0;

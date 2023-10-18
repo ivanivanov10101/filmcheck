@@ -1,10 +1,9 @@
-import { useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 const FooterIntro = () => {
-    const [state] = useState({
+    const state = {
         logo: '/assets/footer/logo_light.png',
         intro: 'FilmCheck Limited. Made by fans in Amsterdam, The Netherlands.'
-    });
+    };
     return (
         <div className='footer__intro'>
             <div className='footer__intro__img'>

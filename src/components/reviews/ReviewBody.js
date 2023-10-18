@@ -39,7 +39,6 @@ const ReviewBody = ({ review }) => {
 						</div>
 						<div className='reviews__body__contents__info__rating'>
 							{rating(review.stars)}
-
 						</div>
 						<div className='reviews__body__contents__info__comment'>
 							{review.comment}

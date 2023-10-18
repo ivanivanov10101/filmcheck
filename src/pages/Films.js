@@ -20,27 +20,23 @@ const Films = () => {
   return (
     <Fragment>
       <SmallHeader/>
-      <div className="movies">
-        <div className="container">
-          <div className='movies__block'>
-            <h2 className='heading'>{heading}</h2>
-            <div className='row ml-minus-15 mr-minus-15'>
-              {currentTableData.map((film) => (
-                <MovieList
-                  movie={film}
-                  key={film.id}
-                />
-              ))}
-            </div>
-            <Pagination
-              className="pagination-bar"
-              currentPage={currentPage}
-              totalCount={allmovies.length}
-              pageSize={EntryAmount}
-              onPageChange={page => setCurrentPage(page)}
+      <div className="container movies__block">
+        <h2 className='heading'>{heading}</h2>
+        <div className='row ml-minus-15 mr-minus-15'>
+          {currentTableData.map((film) => (
+            <MovieList
+              movie={film}
+              key={film.id}
             />
-          </div>
+          ))}
         </div>
+        <Pagination
+          className="pagination-bar"
+          currentPage={currentPage}
+          totalCount={allmovies.length}
+          pageSize={EntryAmount}
+          onPageChange={page => setCurrentPage(page)}
+        />
       </div>
       <Footer/>
     </Fragment>

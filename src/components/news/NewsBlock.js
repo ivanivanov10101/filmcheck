@@ -9,10 +9,8 @@ const NewsBlock = ({ news }) =>{
           <LazyLoadImage src={news.image} alt={news.image}/>
         </div>
         <div className="movies__card__layer">
-          <div className="movies__card__layer__content">
-            <div className="movies__card__layer__content__movie">
-              <Link className="movies__card__layer__content__movie__link" to={`/news/${news.id}`}>{news.name}</Link>
-            </div>
+          <div className="movies__card__layer__content movies__card__layer__content__movie">
+            <Link className="movies__card__layer__content__movie__link" to={`/news/${news.id}`}>{news.name}</Link>
           </div>
         </div>
       </div>

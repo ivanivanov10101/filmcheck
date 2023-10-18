@@ -7,10 +7,8 @@ const ProfileBody = () => {
     <div className="movie-info">
       <div className="container">
         <div className="col-3 p-15 stats">
-          <div className="movies__card">
-            <div className="movies__card__img">
-              <LazyLoadImage src={profilepic}/>
-            </div>
+          <div className="movies__card movies__card__img">
+            <LazyLoadImage src={profilepic}/>
           </div>
           <div className="stats-position-main-buttons">
             <button className="button-5">Edit Profile</button>
