@@ -36,7 +36,7 @@ const Films = () => {
         <h2 className="heading">{heading}</h2>
         <div className="row ml-minus-15 mr-minus-15">
           {popularMovies && popularMovies.map((film) => (
-            <MovieList movie={film} imageSrc={tmdbImageSrc(film.posterPath, 'w342')} key={film.id} />
+            <MovieList movie={film} imageSrc={tmdbImageSrc(film.posterPath, 'w780')} key={film.id} />
           ))}
         </div>
         <Pagination

@@ -83,3 +83,11 @@ export const getRecs = async (mediaType, id) => {
 
   return [];
 };
+
+
+export const getReview = () => {
+  return (
+    <div>TmbdData</div>
+  )
+};
+

@@ -25,7 +25,7 @@ const PopularMovies = () => {
           <h2 className="heading">{heading}</h2>
           <div className="row ml-minus-15 mr-minus-15">
             {popularMovies
-              .map((movie) => <MovieList movie={movie} imageSrc={tmdbImageSrc(movie.posterPath, 'w342')} key={movie.id} />)
+              .map((movie) => <MovieList movie={movie} imageSrc={tmdbImageSrc(movie.posterPath, 'w780')} key={movie.id} />)
               .slice(0, 8)}
           </div>
         </div>
