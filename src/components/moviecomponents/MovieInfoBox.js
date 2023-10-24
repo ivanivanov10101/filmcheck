@@ -1,32 +1,38 @@
 import { Fragment } from "react";
+import { formatDate } from "../../utils";
 
-const MovieInfoBox = ({ details }) => {
+const MovieInfoBox = ({ info, crew }) => {
+
+  const director = crew?.filter(({ job }) => job === "Director");
+
   return (
     <Fragment>
       <div className="stats directed-by">
         Directed by:{" "}
         <div className="stats movie-info-import-data-color">
-          {details.director}
+          {director && director[0].name}
         </div>
       </div>
-      <div className="summary">{details.details}</div>
+      <div className="summary">{info.overview}</div>
       <div className="stats-minor-info">
         <div className="stats runtime">
           Runtime:{" "}
           <div className="stats movie-info-import-data-color">
-            {details.runtime} min.
+            {info.runtime} min.
           </div>
         </div>
         <div className="stats genres">
           Genres:{" "}
           <div className="stats movie-info-import-data-color">
-            {details.genres}
+            {info.genres.map((genre, id) => {
+              return <span key={id}>{(id ? ", " : "") + genre.name}</span>;
+            })}
           </div>
         </div>
         <div className="stats release">
           Release Date:{" "}
           <div className="stats movie-info-import-data-color">
-            {details.release}
+            {formatDate(info.releaseDate)}
           </div>
         </div>
       </div>

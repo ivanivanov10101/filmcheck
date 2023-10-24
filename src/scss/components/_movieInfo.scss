@@ -1,5 +1,7 @@
 @use "../abstracts" as *;
 
+
+
 .movie-info {
   margin: -15rem 0 3rem;
   background-image: linear-gradient(
@@ -52,8 +54,12 @@
 
 .stats-position-rating {
   display: flex;
+  height: 6rem;
+  justify-content: center;
+  align-items: center;
   &__stars {
     margin: 1rem 0.5rem 1rem;
+    margin-right: 1rem;
   }
 }
 
@@ -104,7 +110,8 @@
   display: flex;
 }
 
-.movieTabs {
+.movie-tabs {
+  min-width: 100%;
 }
 
 .button-5 {

@@ -6,10 +6,11 @@ import LoadingSpinner from "./components/shared/LoadingSpinner";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Films from "./pages/Films";
-import MovieList from "./pages/MovieList";
+import FilmPage from "./pages/FilmPage";
 import NewsEntry from "./components/news/NewsEntry";
 import ThemeToggle from "./components/ThemeToggle";
 import Providers from "./helpers/Providers";
+import Person from "./pages/Person";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -25,8 +26,7 @@ function App() {
         <Suspense
           fallback={
             <div className="center">
-              {" "}
-              <LoadingSpinner />{" "}
+              <LoadingSpinner />
             </div>
           }
         >
@@ -42,8 +42,9 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route exact path="/profile" element={<Profile />} />
               <Route path="/films" element={<Films />} />
-              <Route path="/film/:id" element={<MovieList />} />
+              <Route path="/film/:id" element={<FilmPage />} />
               <Route path="/news/:id" element={<NewsEntry />} />
+              <Route path="/person/:id" element={<Person />} />
             </Routes>
           </Providers>
         </Suspense>

@@ -6,10 +6,11 @@ import ModalContext from "../context/ModalContext";
 import { OPEN_MODEL } from "../context/types/ModelTypes";
 import Register from "../auth/Register";
 import Login from "../auth/Login";
-import Movies from "../components/Movies";
+import TopRatedMovies from "../components/TopRatedMovies";
 import NewsFeed from "../components/news/NewsFeed";
 import Footer from "../components/footer/Footer";
 import Reviews from "../components/Reviews";
+import PopularMovies from "../components/PopularMovies";
 
 const Home = () => {
   const { dispatch } = useContext(ModalContext);
@@ -21,9 +22,11 @@ const Home = () => {
   };
   const [registerModel] = useState("registerModel");
   const [loginModel] = useState("loginModel");
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <Fragment>
       <Helmet>
@@ -45,8 +48,9 @@ const Home = () => {
       <Model current={loginModel}>
         <Login currentModel={registerModel} />{" "}
       </Model>
-      <Movies />
+      <PopularMovies />
       <Reviews />
+      <TopRatedMovies />
       <NewsFeed />
       <Footer />
     </Fragment>

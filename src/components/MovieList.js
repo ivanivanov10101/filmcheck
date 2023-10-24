@@ -1,16 +1,16 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
-const MovieList = ({ movie }) => {
+const MovieList = ({ movie, imageSrc }) => {
   return (
     <div className="col-3 p-15">
       <div className="movies__card">
         <div className="movies__card__img">
-          <LazyLoadImage src={movie.image} alt={movie.image} />
+          <LazyLoadImage src={imageSrc} alt={imageSrc} />
         </div>
         <div className="movies__card__layer">
           <div className="movies__card__layer__content movies__card__layer__content__movie">
-            {movie.name}
+            {movie.title}
           </div>
         </div>
         <div className="movies__card__info movies__card__info__text">
