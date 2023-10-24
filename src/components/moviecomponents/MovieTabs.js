@@ -3,7 +3,6 @@ import "../../scss/components/_tabs.scss";
 import { Link } from "react-router-dom";
 
 const MovieTabs = ({ cast, crew }) => {
-  console.log(cast)
   return (
     <Tabs>
       <TabList>

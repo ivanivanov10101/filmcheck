@@ -42,7 +42,7 @@
     }
     @include position(absolute, 0, 0, null, null, 100%, 100%);
     overflow: hidden;
-    box-shadow: 0 8px 85px 50px black;
+    box-shadow: 0 8px 85px 30px black;
   }
   &__contents {
     @include position(absolute, 0, 0, null, null, 100%, 100%);

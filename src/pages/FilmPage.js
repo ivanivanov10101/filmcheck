@@ -7,6 +7,7 @@ import MovieRecEntry from "../components/recs/MovieRecEntry";
 import Footer from "../components/footer/Footer";
 import { getCast, getMovie, getRecs } from "../api/tmbd-data";
 import { tmdbImageSrc } from "../utils";
+import LoadingSpinner from "../components/shared/LoadingSpinner";
 
 const FilmPage = () => {
   const { id } = useParams();
@@ -40,11 +41,7 @@ const FilmPage = () => {
   if (film === null) {
     return <></>;
   } else if (film === undefined) {
-    return (
-      <div className={"center"}>
-        <h1>LOADING</h1>
-      </div>
-    );
+    return <LoadingSpinner/>;
   }
   return (
     <Fragment>

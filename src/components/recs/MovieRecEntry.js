@@ -3,6 +3,7 @@ import {shuffle, tmdbImageSrc} from "../../utils";
 
 const MovieRecEntry = ({ movies, name }) => {
   let recs = shuffle(movies.results)
+
   return (
     <div className="similar-movies">
       <div className="container">

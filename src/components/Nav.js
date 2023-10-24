@@ -32,7 +32,7 @@ const Nav = ({ children }) => {
               Films
             </Link>
           </li>
-          <li>{children}</li>
+          {/*<li>{children}</li>*/}
         </div>
       </div>
     </Fragment>
