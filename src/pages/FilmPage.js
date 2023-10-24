@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import MovieInfo from "../components/MovieInfo";
 import MovieRecEntry from "../components/recs/MovieRecEntry";
 import Footer from "../components/footer/Footer";
-import { getCast, getMovie, getRecs } from "../api/tmbd-data";
+import { getCast, getMovie, getSimilar } from "../api/tmbd-data";
 import { tmdbImageSrc } from "../utils";
 import LoadingSpinner from "../components/shared/LoadingSpinner";
 
@@ -21,7 +21,7 @@ const FilmPage = () => {
   const [film, setFilm] = useState(null);
 
   const [cast, setCast] = useState([]);
-  const [recs, setRecs] = useState([]);
+  const [similar, setSimilar] = useState([]);
 
   useEffect(() => {
     setFilm(undefined);
@@ -31,8 +31,8 @@ const FilmPage = () => {
       setFilm(film);
       const cast = await getCast("movie", film.id);
       setCast(cast);
-      const recs = await getRecs("movie", film.id);
-      setRecs(recs);
+      const similar = await getSimilar("movie", film.id);
+      setSimilar(similar);
     };
 
     fetch();
@@ -41,7 +41,7 @@ const FilmPage = () => {
   if (film === null) {
     return <></>;
   } else if (film === undefined) {
-    return <LoadingSpinner/>;
+    return <LoadingSpinner />;
   }
   return (
     <Fragment>
@@ -50,7 +50,7 @@ const FilmPage = () => {
       </Helmet>
       <Header image={tmdbImageSrc(film.backdropPath, "original")}></Header>
       <MovieInfo info={film} crew={cast.crew} cast={cast.cast} />
-      {recs.length !== 0 && <MovieRecEntry movies={recs} name={film.title} />}
+      {similar.length !== 0 && <MovieRecEntry movies={similar} name={film.title} />}
       <Footer />
     </Fragment>
   );

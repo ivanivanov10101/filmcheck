@@ -1,5 +1,5 @@
 import moment from "moment";
-import {BsFillStarFill, BsStar} from "react-icons/bs";
+import { BsFillStarFill, BsStar } from "react-icons/bs";
 
 export const formatResult = (obj, mediaType) => {
   return {
@@ -14,7 +14,6 @@ export const formatResult = (obj, mediaType) => {
     overview: obj.overview,
     genres: obj.genres,
     results: obj.results,
-
   };
 };
 
@@ -24,7 +23,7 @@ export const shuffle = (a) => {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
-}
+};
 
 export const rating = (number) => {
   const maxStars = 5;
@@ -54,15 +53,15 @@ export const rating = (number) => {
 };
 
 export const tmdbImageSrc = (path, size) => {
-  if (!path) return ''
+  if (!path) return "";
 
-  return `https://image.tmdb.org/t/p/${size}/${path}`
-}
+  return `https://image.tmdb.org/t/p/${size}/${path}`;
+};
 
 export const formatDate = (date) => {
-  return moment(date).format('Do MMMM YYYY');
-}
+  return moment(date).format("Do MMMM YYYY");
+};
 
 export const formatDateShort = (date) => {
-  return moment(date).format('YYYY');
-}
+  return moment(date).format("YYYY");
+};

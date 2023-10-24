@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { formatDate } from "../../utils";
 
 const MovieInfoBox = ({ info, crew }) => {
-
   const director = crew?.filter(({ job }) => job === "Director");
 
   return (

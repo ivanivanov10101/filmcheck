@@ -9,7 +9,8 @@ const Nav = ({ children }) => {
   return (
     <Fragment>
       {state ? (
-        <div className="navClass"
+        <div
+          className="navClass"
           onClick={() => dispatch({ type: NAV_TOGGLE })}
         ></div>
       ) : (

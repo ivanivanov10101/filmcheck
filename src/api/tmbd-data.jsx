@@ -1,5 +1,5 @@
 import axios from "axios";
-import {formatResult} from "../utils";
+import { formatResult } from "../utils";
 
 const axiosClient = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
@@ -9,7 +9,7 @@ axiosClient.interceptors.request.use((config) => {
   return {
     ...config,
     headers: {
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYWEzYWZjNmMyYmU0ODU5MGI4NmM3NmU4MTkxZWY5OCIsInN1YiI6IjY1MDljNzYxZmEyN2Y0MDBjYWE1YjFkNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.llgJVC0hoek7A2a-DVdzKrf0oegtmsRirrzOBhN7UFo`
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYWEzYWZjNmMyYmU0ODU5MGI4NmM3NmU4MTkxZWY5OCIsInN1YiI6IjY1MDljNzYxZmEyN2Y0MDBjYWE1YjFkNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.llgJVC0hoek7A2a-DVdzKrf0oegtmsRirrzOBhN7UFo`,
     },
     params: {
       ...config.params,
@@ -70,10 +70,10 @@ export const getCast = async (mediaType, id) => {
   return [];
 };
 
-export const getRecs = async (mediaType, id) => {
+export const getSimilar = async (mediaType, id) => {
   try {
     const { data } = await axiosClient.get(
-      `/${mediaType}/${id}/recommendations?language=en-US&page=1`,
+      `/${mediaType}/${id}/similar?language=en-US&page=1`,
     );
 
     return data;
@@ -84,10 +84,6 @@ export const getRecs = async (mediaType, id) => {
   return [];
 };
 
-
 export const getReview = () => {
-  return (
-    <div>TmbdData</div>
-  )
+  return <div>TmbdData</div>;
 };
-

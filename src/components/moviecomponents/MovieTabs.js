@@ -29,7 +29,7 @@ const MovieTabs = ({ cast, crew }) => {
           {crew &&
             crew.map((crew, i) => (
               <div className="" key={i}>
-                <Link to={"/"} className="members__link">
+                <Link to={`/person/${crew.id}`} className="members__link">
                   <div className="members">
                     {crew.department}
                     {": "}
