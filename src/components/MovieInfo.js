@@ -12,10 +12,9 @@ import MovieSecondaryButtons from "./moviecomponents/MovieSecondaryButtons";
 import MovieRating from "./moviecomponents/MovieRating";
 import MovieInfoBox from "./moviecomponents/MovieInfoBox";
 import { formatDateShort, tmdbImageSrc } from "../utils";
-import placeholder from "../data/placeholder-movieimage.png";
-import MovieReviews from "./moviecomponents/MovieReviews";
+import placeholder from '../data/placeholder-movieimage.png';
 
-const MovieInfo = ({ info, crew, cast, reviews }) => {
+const MovieInfo = ({ info, crew, cast }) => {
   const { dispatch } = useContext(ModalContext);
   const [reviewModal] = useState("reviewModal");
   const [reviewModalSubmitted] = useState("reviewModalSubmitted");
@@ -27,11 +26,7 @@ const MovieInfo = ({ info, crew, cast, reviews }) => {
           <div className="movies__card">
             <div className="movies__card__img">
               <LazyLoadImage
-                src={
-                  tmdbImageSrc(info.posterPath, "w780")
-                    ? tmdbImageSrc(info.posterPath, "w780")
-                    : placeholder
-                }
+                src={tmdbImageSrc(info.posterPath, "w780") ? tmdbImageSrc(info.posterPath, "w780") : placeholder}
                 alt={"movie poster"}
               />
             </div>
@@ -62,9 +57,6 @@ const MovieInfo = ({ info, crew, cast, reviews }) => {
           <MovieInfoBox info={info} crew={crew} />
           <div className="stats movie-tabs">
             <MovieTabs cast={cast} crew={crew} />
-          </div>
-          <div className="stats movie-reviews">
-            <MovieReviews reviews={reviews} />
           </div>
           <Model current={reviewModal}>
             <ReviewModel currentModel={reviewModalSubmitted} />

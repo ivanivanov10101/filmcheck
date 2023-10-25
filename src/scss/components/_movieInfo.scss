@@ -52,18 +52,27 @@
 
 .stats-position-rating {
   display: flex;
-  width: auto;
-  font-size: 3.5rem;
-  margin-top: 1rem;
-  text-align: center;
+  height: 6rem;
+  justify-content: center;
+  align-items: center;
+  &__stars {
+    margin: 1rem 0.5rem 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.score {
+  margin: auto;
+}
+
+.stats-position-rating-number {
+  font-size: 3rem;
+  margin: 1.3rem 2.8rem 1rem;
+  float: right;
 }
 
 .stats-minor-info {
   padding-bottom: 3rem;
-}
-
-.rating {
-  width: auto;
 }
 
 .directed-by {

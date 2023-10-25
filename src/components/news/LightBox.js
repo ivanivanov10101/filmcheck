@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import NewsContext from "../../context/NewsContext";
 import { CLOSE_LIGHTBOX } from "../../context/types/GalleryTypes";
-
 const LightBox = () => {
   const {
     galleryStore: { currentLightBox },

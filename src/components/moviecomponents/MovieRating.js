@@ -1,19 +1,16 @@
-import { Rating } from "react-simple-star-rating";
+import { rating } from "../../utils";
 
 const MovieRating = ({ info }) => {
-  let movieRating = parseFloat((info / 2).toFixed(2));
+  let movieRating = (info / 2).toFixed(2);
 
   return (
     <div className="stats-position-rating">
-      <Rating
-        initialValue={movieRating}
-        readonly
-        allowFraction
-        fillColor="#18c50f"
-        emptyColor="#445566"
-        className="rating"
-      />
-      <span className="rating">{movieRating}</span>
+      <div className="stats-position-rating-number score">
+        <span className="stats-position-rating__stars">
+          {rating(movieRating)}
+        </span>
+        <span>{movieRating}</span>
+      </div>
     </div>
   );
 };

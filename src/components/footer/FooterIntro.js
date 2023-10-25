@@ -1,5 +1,4 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
 const FooterIntro = () => {
   const state = {
     logo: "/assets/footer/logo_light.png",
