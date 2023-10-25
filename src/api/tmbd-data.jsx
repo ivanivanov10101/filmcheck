@@ -2,6 +2,7 @@ import axios from "axios";
 import { formatResult } from "../utils";
 
 const API_KEY = process.env.API_KEY;
+const API_REA_TOKEN = process.env.API_REA_TOKEN
 
 const axiosClient = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
@@ -11,7 +12,7 @@ axiosClient.interceptors.request.use((config) => {
   return {
     ...config,
     headers: {
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYWEzYWZjNmMyYmU0ODU5MGI4NmM3NmU4MTkxZWY5OCIsInN1YiI6IjY1MDljNzYxZmEyN2Y0MDBjYWE1YjFkNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.llgJVC0hoek7A2a-DVdzKrf0oegtmsRirrzOBhN7UFo`,
+      Authorization: `Bearer ${API_REA_TOKEN}`,
     },
     params: {
       ...config.params,
