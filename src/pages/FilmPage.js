@@ -70,10 +70,10 @@ const FilmPage = () => {
         <MovieRecEntry movies={similar} name={film.title} />
       )}
       <Footer />
-      <TrailerModal
-          onHide={() => movieTrailer('')}
-          src={trailer}
-      ></TrailerModal>
+      {/*<TrailerModal*/}
+      {/*    onHide={() => movieTrailer('')}*/}
+      {/*    src={trailer}*/}
+      {/*></TrailerModal>*/}
     </Fragment>
   );
 };
