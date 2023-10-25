@@ -1,8 +1,8 @@
 import axios from "axios";
 import { formatResult } from "../utils";
 
-const API_KEY = process.env.API_KEY;
-const API_REA_TOKEN = process.env.API_REA_TOKEN
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+const API_REA_TOKEN = process.env.NEXT_PUBLIC_API_REA_TOKEN;
 
 const axiosClient = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
