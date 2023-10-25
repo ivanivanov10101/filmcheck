@@ -1,6 +1,8 @@
 import axios from "axios";
 import { formatResult } from "../utils";
 
+const API_KEY = process.env.API_KEY;
+
 const axiosClient = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
 });
@@ -13,7 +15,7 @@ axiosClient.interceptors.request.use((config) => {
     },
     params: {
       ...config.params,
-      api_key: "0aa3afc6c2be48590b86c76e8191ef98",
+      api_key: `${API_KEY}`,
     },
   };
 });
@@ -84,6 +86,35 @@ export const getSimilar = async (mediaType, id) => {
   return [];
 };
 
-export const getReview = () => {
-  return <div>TmbdData</div>;
+export const getReviews = async (mediaType, id) => {
+  try {
+    const { data } = await axiosClient.get(
+        `/${mediaType}/${id}/reviews?language=en-US&page=1`,
+    );
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+
+  return [];
 };
+
+export const getTrailer = async (mediaType, id) => {
+  try {
+    const { data } = await axiosClient.get(`/${mediaType}/${id}/videos`)
+
+    return (
+        data.results
+            .filter((res) => res.site.toLowerCase() === 'youtube')
+            .map((res) => ({
+              id: res.id,
+              key: res.key,
+            })) ?? []
+    )
+  } catch (error) {
+    console.error(error)
+  }
+
+  return []
+}

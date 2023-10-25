@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { BsChevronLeft } from "react-icons/bs";
 import { Fragment } from "react";
+
 const ShowFooterLinks = ({ links, external }) => {
   return links.map((link) => (
     <ul className="footer__ul" key={link.id}>
