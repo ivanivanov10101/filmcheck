@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import SharedContext from "../context/SharedContext";
 import ReviewBody from "./reviews/ReviewBody";
-import { getCast, getMovie, getSimilar, getReview } from "../api/tmbd-data";
 
 const Reviews = () => {
   const [heading] = useState("Popular Reviews");
