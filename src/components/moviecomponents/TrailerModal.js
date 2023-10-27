@@ -1,19 +1,19 @@
-import { useEffect, useState } from 'react'
-import { IoIosClose } from 'react-icons/io'
+import { useEffect, useState } from "react";
+import { IoIosClose } from "react-icons/io";
 
-import { Container } from './Container'
+import { Container } from "./Container";
 
 export const TrailerModal = (props) => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   const hide = () => {
-    setShow(false)
-    props.onHide()
-  }
+    setShow(false);
+    props.onHide();
+  };
 
   useEffect(() => {
-    if (props.src) setShow(true)
-  }, [props.src])
+    if (props.src) setShow(true);
+  }, [props.src]);
 
   return (
     <div
@@ -24,7 +24,7 @@ export const TrailerModal = (props) => {
                 ? `
               opacity-[1]
             `
-                : 'opacity-0 pointer-events-none'
+                : "opacity-0 pointer-events-none"
             }
             ease-in-out
             duration-300
@@ -67,7 +67,7 @@ export const TrailerModal = (props) => {
         <div
           className="bg-header rounded-lg"
           onClick={(e) => {
-            e.stopPropagation()
+            e.stopPropagation();
           }}
         >
           <div className="p-3 text-right">
@@ -76,15 +76,12 @@ export const TrailerModal = (props) => {
             </button>
           </div>
           {show ? (
-            <iframe
-              src={props.src}
-              className="w-full h-[500px]"
-            ></iframe>
+            <iframe src={props.src} className="w-full h-[500px]"></iframe>
           ) : (
-            ''
+            ""
           )}
         </div>
       </Container>
     </div>
-  )
-}
+  );
+};

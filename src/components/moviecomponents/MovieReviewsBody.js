@@ -19,7 +19,8 @@ export default function MovieReviewsBody({ review }) {
       <div className="commit">
         <div className="info">
           <p>
-              Review by <span className="review__author">{review.author}</span> at <span>{formatDate(review.created_at)}</span>
+            Review by <span className="review__author">{review.author}</span> at{" "}
+            <span>{formatDate(review.created_at)}</span>
           </p>
         </div>
         <Review content={review.content} />

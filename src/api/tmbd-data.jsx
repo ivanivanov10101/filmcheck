@@ -39,9 +39,21 @@ export const getTopRated = async (mediaType, page) => {
 
 export const getPopulars = async (mediaType) => {
   try {
-    const { data } = await axiosClient.get(`/${mediaType}/popular`);
+    const { data } = await axiosClient.get(`/${mediaType}/popular?language=en-US&page=1`);
 
     return data.results.map((val) => formatResult(val, mediaType));
+  } catch (error) {
+    console.error(error);
+  }
+
+  return [];
+};
+
+export const getPopulars2 = async (page) => {
+  try {
+    const { data } = await axiosClient.get(`/movie/popular?language=en-US&page=${page}`);
+
+    return data;
   } catch (error) {
     console.error(error);
   }
@@ -90,7 +102,7 @@ export const getSimilar = async (mediaType, id) => {
 export const getReviews = async (mediaType, id) => {
   try {
     const { data } = await axiosClient.get(
-        `/${mediaType}/${id}/reviews?language=en-US&page=1`,
+      `/${mediaType}/${id}/reviews?language=en-US&page=1`,
     );
 
     return data;
@@ -103,19 +115,19 @@ export const getReviews = async (mediaType, id) => {
 
 export const getTrailer = async (mediaType, id) => {
   try {
-    const { data } = await axiosClient.get(`/${mediaType}/${id}/videos`)
+    const { data } = await axiosClient.get(`/${mediaType}/${id}/videos`);
 
     return (
-        data.results
-            .filter((res) => res.site.toLowerCase() === 'youtube')
-            .map((res) => ({
-              id: res.id,
-              key: res.key,
-            })) ?? []
-    )
+      data.results
+        .filter((res) => res.site.toLowerCase() === "youtube")
+        .map((res) => ({
+          id: res.id,
+          key: res.key,
+        })) ?? []
+    );
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 
-  return []
-}
+  return [];
+};

@@ -1,33 +1,35 @@
-import React, { Fragment, useEffect, useMemo, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import MovieList from "../components/MovieList";
-import Pagination from "../components/page-elements/Pagination";
 import SmallHeader from "../components/SmallHeader";
 import Footer from "../components/footer/Footer";
-import { getPopulars } from "../api/tmbd-data";
+import { getPopulars2 } from "../api/tmbd-data";
 import { tmdbImageSrc } from "../utils";
+import ReactPaginate from "react-paginate";
 
 const Films = () => {
-  const [heading] = useState("Currently Popular");
-
-  const [currentPage, setCurrentPage] = useState(1);
-
-  let EntryAmount = 16;
+  const heading = "Currently Popular";
 
   const [popularMovies, setPopularMovies] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
 
-  const fetchPopularMovies = async () => {
-    const movies = await getPopulars("movie");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+
+  const fetchPopularMovies = async (page) => {
+    const movies = await getPopulars2(page);
     setPopularMovies(movies);
+    setPageCount(500); //hard limit by the API, stated in the support pages
+    setIsLoaded(true);
   };
-  const currentTableData = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * EntryAmount;
-    const lastPageIndex = firstPageIndex + EntryAmount;
-    return popularMovies.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage, EntryAmount, popularMovies]);
 
   useEffect(() => {
-    fetchPopularMovies();
-  }, []);
+    fetchPopularMovies(currentPage);
+  }, [currentPage]);
+
+  const handlePageChange = (selectedObject) => {
+    setCurrentPage(selectedObject.selected + 1);
+  };
 
   return (
     <Fragment>
@@ -35,22 +37,38 @@ const Films = () => {
       <div className="container movies__block">
         <h2 className="heading">{heading}</h2>
         <div className="row ml-minus-15 mr-minus-15">
-          {currentTableData &&
-            currentTableData.map((film) => (
-              <MovieList
-                movie={film}
-                imageSrc={tmdbImageSrc(film.posterPath, "w780")}
-                key={film.id}
-              />
-            ))}
+          {isLoaded ? (
+            popularMovies.results.map((movie) => {
+              return (
+                <MovieList
+                  movie={movie}
+                  imageSrc={tmdbImageSrc(movie.poster_path, "w780")}
+                  key={movie.id}
+                />
+              );
+            })
+          ) : (
+            <div>No Movies Found</div>
+          )}
         </div>
-        <Pagination
-          className="pagination-bar"
-          currentPage={currentPage}
-          totalCount={popularMovies.length}
-          pageSize={EntryAmount}
-          onPageChange={(page) => setCurrentPage(page)}
-        />
+        {popularMovies ? (
+          <ReactPaginate
+            pageCount={pageCount}
+            pageRange={2}
+            breakLabel={"..."}
+            marginPagesDisplayed={3}
+            onPageChange={handlePageChange}
+            containerClassName={"paginate-container"}
+            previousLinkClassName={"page"}
+            nextLinkClassName={"page"}
+            pageClassName={"page"}
+            breakClassName={"page__break"}
+            disabledClassName={"disabled"}
+            activeClassName={"active"}
+          ></ReactPaginate>
+        ) : (
+          <Fragment></Fragment>
+        )}
       </div>
       <Footer />
     </Fragment>
