@@ -2,9 +2,10 @@ import React, { Fragment, useEffect, useState } from "react";
 import MovieList from "../components/MovieList";
 import SmallHeader from "../components/SmallHeader";
 import Footer from "../components/footer/Footer";
-import { getPopulars2 } from "../api/tmbd-data";
+import { getPopularsFilmsPage } from "../api/tmbd-data";
 import { tmdbImageSrc } from "../utils";
 import ReactPaginate from "react-paginate";
+import FilmsPageDropDown from "../components/FilmsPageDropDown";
 
 const Films = () => {
   const heading = "Currently Popular";
@@ -15,9 +16,8 @@ const Films = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoaded, setIsLoaded] = useState(false);
 
-
   const fetchPopularMovies = async (page) => {
-    const movies = await getPopulars2(page);
+    const movies = await getPopularsFilmsPage(page);
     setPopularMovies(movies);
     setPageCount(500); //hard limit by the API, stated in the support pages
     setIsLoaded(true);
@@ -35,6 +35,7 @@ const Films = () => {
     <Fragment>
       <SmallHeader />
       <div className="container movies__block">
+        {/*<h2 className="heading"><FilmsPageDropDown/></h2>*/}
         <h2 className="heading">{heading}</h2>
         <div className="row ml-minus-15 mr-minus-15">
           {isLoaded ? (

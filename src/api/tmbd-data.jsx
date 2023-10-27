@@ -49,7 +49,7 @@ export const getPopulars = async (mediaType) => {
   return [];
 };
 
-export const getPopulars2 = async (page) => {
+export const getPopularsFilmsPage = async (page) => {
   try {
     const { data } = await axiosClient.get(`/movie/popular?language=en-US&page=${page}`);
 
