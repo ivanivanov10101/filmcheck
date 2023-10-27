@@ -1,5 +1,5 @@
 import * as React from "react";
-import Review from "./Review";
+import ReadMoreCollapse from "./ReadMoreCollapse";
 import { formatDate, tmdbImageSrc } from "../../utils";
 import placeholder_avatar from "../../data/placeholder-userimage.png";
 
@@ -23,7 +23,7 @@ export default function MovieReviewsBody({ review }) {
             <span>{formatDate(review.created_at)}</span>
           </p>
         </div>
-        <Review content={review.content} />
+        <ReadMoreCollapse content={review.content} />
       </div>
     </div>
   );

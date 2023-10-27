@@ -101,7 +101,7 @@ export const newsArticles = [
     alt: "Happy Salma as Nana in Before, Now & Then.",
     h1: "As Kamila Andini’s Before, Now & Then comes to US cinemas, the mother of contemporary Indonesian cinema muses on mistresses, dreams and what kind of horror ﬁlm she should make.",
     content:
-      "Scroll the comments on any of our social posts about Kamila Andini and you’ll find “mother” compliments aplenty. The Indonesian filmmaker, whose 2021 coming-of-age feature, Yuni, was named the third highest-rated in our Year in Review, has been a pivotal figure in contemporary Indonesia cinema for the past decade. In a region where horror is the often best indicator of box office success—many Letterboxd lists are devoted to ranking the films of scaremongers Joko Anwar, the Mo Brothers and friends—Anidini, her father Garin Nugroho, husband Ifa Isfansyah and their FourColours Films colleagues are nurturing a different cast of independent voices. \n" +
+      "Scroll the comments on any of our social posts about Kamila Andini and you’ll find “mother” compliments aplenty. The Indonesian filmmaker, whose 2021 coming-of-age feature, Yuni, was named the third highest-rated in our Year in ReadMoreCollapse, has been a pivotal figure in contemporary Indonesia cinema for the past decade. In a region where horror is the often best indicator of box office success—many Letterboxd lists are devoted to ranking the films of scaremongers Joko Anwar, the Mo Brothers and friends—Anidini, her father Garin Nugroho, husband Ifa Isfansyah and their FourColours Films colleagues are nurturing a different cast of independent voices. \n" +
       "\n" +
       "Andini’s own particular means of expression is to tell stories of Indonesian women and their struggles for self-determination against the republic’s Islamist backdrop. Child marriage, gender violence, political representation, the rights of people to love who they love: the issues are broad and critical on a human rights level, but Andini tends to zero in on a single household, layering a lush, illusive atmosphere over day-to-day domesticity. ",
   },
@@ -131,7 +131,7 @@ export const newsArticles = [
     name: "Ones to Watch: our August 2023 picks of the best new bubbling-under films",
     image: "/assets/news_images/news_10.jpg",
     content:
-      "Welcome to our new monthly column aimed at getting new films that are bubbling under onto your watchlists. It’s based on the “Ones to Watch” section in our annual Year in Review (here’s 2022’s top ten), in which we spotlight the highly rated films from the year that didn’t have enough logged views to make our best-of lists. \n" +
+      "Welcome to our new monthly column aimed at getting new films that are bubbling under onto your watchlists. It’s based on the “Ones to Watch” section in our annual Year in ReadMoreCollapse (here’s 2022’s top ten), in which we spotlight the highly rated films from the year that didn’t have enough logged views to make our best-of lists. \n" +
       "\n" +
       "We’ve decided once a year isn’t enough, especially when our tight editorial team and our wider community are seeing these gems year-round in festivals and local releases. So, no longer will these movies fly under the radar. Our curated selections are drawn from what we’ve seen, what you’ve seen, and we’ll have insights from the filmmakers on occasion, too. Ratings come into the equation, but so do hearts and general good vibes. \n" +
       "\n" +

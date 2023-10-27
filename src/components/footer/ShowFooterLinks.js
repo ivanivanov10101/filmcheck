@@ -9,9 +9,9 @@ const ShowFooterLinks = ({ links, external }) => {
         {external ? (
           <Fragment>
             <BsChevronLeft size={12} />
-            <a href={link.route} target="_blank" rel="noreferrer">
+            <Link to={link.route} target="_blank" rel="noreferrer">
               {link.name}
-            </a>
+            </Link>
           </Fragment>
         ) : (
           <Fragment>

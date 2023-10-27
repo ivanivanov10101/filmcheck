@@ -13,14 +13,14 @@ const ReviewModel = (props) => {
   return (
     <form onSubmit={registerForm}>
       <div className="form__heading">
-        <h3>Add Review</h3>
+        <h3>Add ReadMoreCollapse</h3>
       </div>
       <div className="group">
         <input
           type="text"
           name=""
           className="group__control"
-          placeholder="Review"
+          placeholder="ReadMoreCollapse"
           value={state.review}
           onChange={(e) => setState({ ...state, review: e.target.value })}
         />

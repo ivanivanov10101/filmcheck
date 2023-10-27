@@ -39,7 +39,9 @@ export const getTopRated = async (mediaType, page) => {
 
 export const getPopulars = async (mediaType) => {
   try {
-    const { data } = await axiosClient.get(`/${mediaType}/popular?language=en-US&page=1`);
+    const { data } = await axiosClient.get(
+      `/${mediaType}/popular?language=en-US&page=1`,
+    );
 
     return data.results.map((val) => formatResult(val, mediaType));
   } catch (error) {
@@ -51,7 +53,9 @@ export const getPopulars = async (mediaType) => {
 
 export const getPopularsFilmsPage = async (page) => {
   try {
-    const { data } = await axiosClient.get(`/movie/popular?language=en-US&page=${page}`);
+    const { data } = await axiosClient.get(
+      `/movie/popular?language=en-US&page=${page}`,
+    );
 
     return data;
   } catch (error) {
@@ -125,6 +129,30 @@ export const getTrailer = async (mediaType, id) => {
           key: res.key,
         })) ?? []
     );
+  } catch (error) {
+    console.error(error);
+  }
+
+  return [];
+};
+
+export const getPerson = async (id) => {
+  try {
+    const { data } = await axiosClient.get(`/person/${id}?language=en-US`);
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+
+  return [];
+};
+
+export const getPersonMovies = async (id) => {
+  try {
+    const { data } = await axiosClient.get(`/person/${id}/movie_credits?language=en-US`);
+
+    return data;
   } catch (error) {
     console.error(error);
   }

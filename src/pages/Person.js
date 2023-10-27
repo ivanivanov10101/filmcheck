@@ -1,17 +1,36 @@
 import { Helmet } from "react-helmet-async";
-import Header from "../components/Header";
 import Footer from "../components/footer/Footer";
-import ProfileBody from "../components/ProfileBody";
-import { Fragment } from "react";
+import {Fragment, useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
+import {getPerson, getPersonMovies} from "../api/tmbd-data";
+import PersonBody from "../components/person/PersonBody";
+import SmallHeader from "../components/SmallHeader";
 
 const Person = () => {
+  const id = useParams();
+  const [person, setPerson] = useState([])
+  const [personMovies, setPersonMovies] = useState([])
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  const fetchPersonData = async (id) => {
+    const person = await getPerson(id.id)
+    setPerson(person)
+    const movies = await getPersonMovies(id.id)
+    setPersonMovies(movies)
+    setIsLoaded(true)
+  }
+
+  useEffect(() => {
+    fetchPersonData(id)
+  }, [id]);
+
   return (
     <Fragment>
       <Helmet>
-        <title>{"Ivan Ivanov"}</title>
+        <title>{person.name}</title>
       </Helmet>
-      <Header></Header>
-      <ProfileBody />
+      <SmallHeader/>
+      <PersonBody person={person} movies={personMovies} isLoaded={isLoaded}/>
       <Footer />
     </Fragment>
   );

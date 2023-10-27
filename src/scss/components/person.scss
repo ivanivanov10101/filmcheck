@@ -1,0 +1,122 @@
+.person-wrapper {
+  overflow: hidden;
+  padding: 5rem;
+}
+
+.person-wrapper section {
+  min-height: 200px;
+  padding: 10px;
+}
+.sidebar {
+  float: left;
+  margin: 10px;
+  width: 25%;
+  border: 2px solid #00ff13;
+
+  &__biography {
+    margin: 1rem;
+    padding-top: 2rem;
+    color: #89a;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+  &__bottom {
+    margin-left: 1rem;
+  }
+}
+
+
+.films {
+  overflow:hidden;
+  margin:10px;
+  float: right;
+  width: 70%;
+  border:2px dashed #ccc;
+  min-height:170px;
+  &__header {
+    font-family: Graphik-Regular-Web,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: .075em;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    background: #9ab;
+    background-clip: text;
+    color: transparent;
+    border-bottom: 1px solid #9ab;
+    &__name {
+      color: white;
+      font-size: 2rem;
+      font-weight: 200;
+    }
+  }
+  &__wrapper {
+    color: pink;
+    border: 2px dashed pink;
+  }
+}
+
+.imdb_link {
+  padding: 1rem;
+}
+
+.button-8 {
+  background-color: #97a9b6;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-8:hover,
+.button-8:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.button-8:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-8:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+    border-bottom:2px solid #000;
+  }
+}
+
+.readmore-text {
+  display: inline;
+  width: 100%;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}

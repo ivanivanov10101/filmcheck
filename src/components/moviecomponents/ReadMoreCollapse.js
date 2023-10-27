@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import { reducer } from "../../helpers/reducer";
 
-function Review({ content }) {
+function ReadMoreCollapse({ content }) {
   const initialState = {
     sliceLast: "180",
     read: false,
@@ -26,7 +26,7 @@ function Review({ content }) {
         <>
           {!state.read ? (
             <p className="read-more" onClick={readMore}>
-              Read More
+              [ Read More ]
             </p>
           ) : (
             <p className="read-more" onClick={readLess}>
@@ -41,4 +41,4 @@ function Review({ content }) {
   );
 }
 
-export default Review;
+export default ReadMoreCollapse;
