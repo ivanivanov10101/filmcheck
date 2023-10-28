@@ -11,7 +11,7 @@ const MovieReviews = (reviews) => {
                 <MovieReviewsBody key={id} review={review} />
               ))
               .slice(0, 6)
-          : " "}
+          : "No reviews found."}
       </div>
     </div>
   );

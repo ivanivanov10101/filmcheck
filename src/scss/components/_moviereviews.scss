@@ -51,10 +51,12 @@
     .read-more {
       font-size: 14px;
       opacity: 0.8;
-      cursor: pointer;
       display: inline;
+      cursor: pointer;
+
       &.read-more:hover {
         color: white;
+        cursor: pointer;
       }
     }
   }
@@ -75,4 +77,9 @@
     color: var(--yellow);
     font-weight: 500;
   }
+}
+
+.reviews-positioning {
+  margin-top: 1rem;
+  margin-left: 0.1rem;
 }

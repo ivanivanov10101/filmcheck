@@ -1,18 +1,23 @@
+@use "../abstracts" as *;
+
 .person-wrapper {
   overflow: hidden;
-  padding: 5rem;
+  padding: 6rem;
+
+  @include responsive(xsmall) {
+    padding: 2rem;
+  }
 }
 
 .person-wrapper section {
   min-height: 200px;
   padding: 10px;
 }
+
 .sidebar {
   float: left;
-  margin: 10px;
   width: 25%;
-  border: 2px solid #00ff13;
-
+  position: relative;
   &__biography {
     margin: 1rem;
     padding-top: 2rem;
@@ -23,19 +28,36 @@
   &__bottom {
     margin-left: 1rem;
   }
+  &__profilecard {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-size: 100%;
+    &__img {
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 30px black;
+      }
+    }
+  }
 }
 
 
 .films {
   overflow:hidden;
-  margin:10px;
   float: right;
   width: 70%;
-  border:2px dashed #ccc;
+  position: relative;
   min-height:170px;
+
+  @include responsive(xsmall) {
+    width: 100%;
+  }
   &__header {
     font-family: Graphik-Regular-Web,sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.69230769rem;
     font-weight: 400;
     letter-spacing: .075em;
     margin-bottom: 2px;
@@ -46,13 +68,12 @@
     border-bottom: 1px solid #9ab;
     &__name {
       color: white;
-      font-size: 2rem;
-      font-weight: 200;
+      font-size: 20px;
+      font-weight: 800;
     }
   }
   &__wrapper {
     color: pink;
-    border: 2px dashed pink;
   }
 }
 
@@ -61,20 +82,19 @@
 }
 
 .button-8 {
-  background-color: #97a9b6;
+  background-color: #445566;
   border-radius: 3px;
-  border: 1px solid #7aa7c7;
-  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  border: 1px solid #687172;
+  box-shadow: rgba(68, 85, 102, 0.3) 0 1px 0 0 inset;
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
   font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
-  font-size: 13px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.15385;
   margin: 0;
-  outline: none;
   padding: 8px .8em;
   position: relative;
   text-align: center;
@@ -88,8 +108,8 @@
 
 .button-8:hover,
 .button-8:focus {
-  background-color: #b3d3ea;
-  color: #2c5777;
+  background-color: #69809b;
+  color: #ffffff;
 }
 
 .button-8:focus {

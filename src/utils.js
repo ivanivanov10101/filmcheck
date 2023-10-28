@@ -13,6 +13,7 @@ export const formatResult = (obj, mediaType) => {
     overview: obj.overview,
     genres: obj.genres,
     results: obj.results,
+    imdb: obj.imdb_id,
   };
 };
 
@@ -28,6 +29,18 @@ export const tmdbImageSrc = (path, size) => {
   if (!path) return "";
 
   return `https://image.tmdb.org/t/p/${size}/${path}`;
+};
+
+export const imdbSrc = (type, path) => {
+  if (!path) return "";
+
+  return `https://www.imdb.com/${type}/${path}/`;
+};
+
+export const tmdbSrc = (type, path) => {
+  if (!path) return "";
+
+  return `https://www.themoviedb.org/${type}/${path}`;
 };
 
 export const formatDate = (date) => {

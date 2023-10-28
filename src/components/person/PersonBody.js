@@ -1,32 +1,32 @@
 import React, { Fragment } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { tmdbImageSrc } from "../../utils";
+import {imdbSrc, tmdbImageSrc, tmdbSrc} from "../../utils";
 import { Link } from "react-router-dom";
 import MovieList from "../MovieList";
+import ReadMoreCollapse from "../shared/ReadMoreCollapse";
 
-const PersonBody = (person, movies, isLoaded) => {
+const PersonBody = (person) => {
   let info = person.person;
-
   return (
     <Fragment>
       <div className="person-wrapper">
         <section className="sidebar">
-          <div className="movies__card movies__card__img">
+          <div className="sidebar__profilecard sidebar__profilecard__img">
             <LazyLoadImage src={tmdbImageSrc(info.profile_path, "h632")} />
           </div>
-          <div className="sidebar__biography">{info.biography}</div>
+          <div className="sidebar__biography"><ReadMoreCollapse content={info.biography}/></div>
           <span className="sidebar__bottom">More details at: </span>
           <Link
             className="imdb_link"
             target="_blank"
-            to={`https://www.imdb.com/name/${info.imdb_id}/`}
+            to={imdbSrc('name', info.imdb_id)}
           >
             <button className="button-8">IMDB</button>
           </Link>
           <Link
             className="tmdb_link"
             target="_blank"
-            to={`https://www.themoviedb.org/person/${info.id}`}
+            to={tmdbSrc('movie', info.id)}
           >
             <button className="button-8">TMDB</button>
           </Link>
@@ -35,13 +35,13 @@ const PersonBody = (person, movies, isLoaded) => {
           <header className="films__header">
             Films starring <h1 className="films__header__name">{info.name}</h1>
           </header>
-          <div className="films__wrapper">
-            {isLoaded ? (
-              movies.results.map((movie) => {
+          <div className="films__wrapper row">
+            {info ? (
+              info.movie_credits?.cast.map((movie) => {
                 return (
                   <MovieList
                     movie={movie}
-                    imageSrc={tmdbImageSrc(movie.backdrop_path, "w780")}
+                    imageSrc={tmdbImageSrc(movie.poster_path, "w780")}
                     key={movie.id}
                   />
                 );

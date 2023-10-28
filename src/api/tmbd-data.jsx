@@ -138,7 +138,7 @@ export const getTrailer = async (mediaType, id) => {
 
 export const getPerson = async (id) => {
   try {
-    const { data } = await axiosClient.get(`/person/${id}?language=en-US`);
+    const { data } = await axiosClient.get(`/person/${id}?language=en-US&append_to_response=movie_credits`);
 
     return data;
   } catch (error) {
@@ -148,14 +148,3 @@ export const getPerson = async (id) => {
   return [];
 };
 
-export const getPersonMovies = async (id) => {
-  try {
-    const { data } = await axiosClient.get(`/person/${id}/movie_credits?language=en-US`);
-
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
-
-  return [];
-};

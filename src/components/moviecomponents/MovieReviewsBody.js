@@ -1,5 +1,5 @@
 import * as React from "react";
-import ReadMoreCollapse from "./ReadMoreCollapse";
+import ReadMoreCollapse from "../shared/ReadMoreCollapse";
 import { formatDate, tmdbImageSrc } from "../../utils";
 import placeholder_avatar from "../../data/placeholder-userimage.png";
 

@@ -30,6 +30,7 @@
   }
   &__control {
     @include control(5rem, 0, 1.5rem, $lightSilver-45);
+    min-height: 10rem;
   }
 }
 
@@ -50,6 +51,7 @@
   font-weight: 400;
   background: #63d052;
   background-clip: text;
+  position: relative;
   color: transparent;
   border-bottom: 1px solid #63d052;
   padding-bottom: 1rem;

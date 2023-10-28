@@ -3,7 +3,7 @@ import MovieTabs from "./moviecomponents/MovieTabs";
 
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { OPEN_MODEL } from "../context/types/ModelTypes";
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import ModalContext from "../context/ModalContext";
 import Model from "./Model";
 import ReviewModel from "./reviews/ReviewModel";
@@ -11,15 +11,15 @@ import ReviewModelSubmitted from "./reviews/ReviewModelSubmitted";
 import MovieSecondaryButtons from "./moviecomponents/MovieSecondaryButtons";
 import MovieRating from "./moviecomponents/MovieRating";
 import MovieInfoBox from "./moviecomponents/MovieInfoBox";
-import { formatDateShort, tmdbImageSrc } from "../utils";
+import {formatDateShort, imdbSrc, tmdbImageSrc, tmdbSrc} from "../utils";
 import placeholder from "../data/placeholder-movieimage.png";
 import MovieReviews from "./moviecomponents/MovieReviews";
+import {Link} from "react-router-dom";
 
 const MovieInfo = ({ info, crew, cast, reviews }) => {
   const { dispatch } = useContext(ModalContext);
   const [reviewModal] = useState("reviewModal");
   const [reviewModalSubmitted] = useState("reviewModalSubmitted");
-
   return (
     <div className="movie-info">
       <div className="container flex">
@@ -51,6 +51,20 @@ const MovieInfo = ({ info, crew, cast, reviews }) => {
           </div>
           <MovieSecondaryButtons />
           <MovieRating info={info.averageVote} />
+          <Link
+            className="imdb_link"
+            target="_blank"
+            to={imdbSrc('title', info.imdb)}
+          >
+            <button className="button-8">IMDB</button>
+          </Link>
+          <Link
+            className="tmdb_link"
+            target="_blank"
+            to={tmdbSrc('movie', info.id)}
+          >
+            <button className="button-8">TMDB</button>
+          </Link>
         </div>
         <div className="stats main-movie-page-info">
           <div className="header__contents__text__child__movie-page stats-position-year">

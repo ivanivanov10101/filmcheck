@@ -13,22 +13,20 @@ const ReviewModel = (props) => {
   return (
     <form onSubmit={registerForm}>
       <div className="form__heading">
-        <h3>Add ReadMoreCollapse</h3>
+        <h3>Add Your Review Here...</h3>
       </div>
       <div className="group">
         <input
           type="text"
           name=""
           className="group__control"
-          placeholder="ReadMoreCollapse"
           value={state.review}
           onChange={(e) => setState({ ...state, review: e.target.value })}
         />
       </div>
       <div className="group model__row">
-        <input type="submit" name="" className="btn-dark" value="Submit" />
         <span
-          className="already-exists"
+          className="btn-dark"
           onClick={() =>
             dispatch({ type: OPEN_MODEL, payload: props.currentModel })
           }

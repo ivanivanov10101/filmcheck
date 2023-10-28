@@ -7,6 +7,7 @@ function ReadMoreCollapse({ content }) {
     read: false,
   };
   const [state, dispatch] = useReducer(reducer, initialState);
+  if (!content) return null;
   const slicedContent = content.substring(0, state.sliceLast);
   const readMore = () => {
     dispatch({ type: "READ_MORE" });
@@ -30,7 +31,7 @@ function ReadMoreCollapse({ content }) {
             </p>
           ) : (
             <p className="read-more" onClick={readLess}>
-              Read Less
+              [ Read Less ]
             </p>
           )}
         </>
