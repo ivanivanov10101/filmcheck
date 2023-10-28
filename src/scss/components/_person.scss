@@ -24,6 +24,7 @@
     color: #89a;
     font-size: 13px;
     letter-spacing: 0.03em;
+    white-space: pre-wrap;
   }
   &__bottom {
     margin-left: 1rem;
@@ -44,22 +45,21 @@
   }
 }
 
-
 .films {
-  overflow:hidden;
+  overflow: hidden;
   float: right;
   width: 70%;
   position: relative;
-  min-height:170px;
+  min-height: 170px;
 
   @include responsive(xsmall) {
     width: 100%;
   }
   &__header {
-    font-family: Graphik-Regular-Web,sans-serif;
+    font-family: Graphik-Regular-Web, sans-serif;
     font-size: 1.69230769rem;
     font-weight: 400;
-    letter-spacing: .075em;
+    letter-spacing: 0.075em;
     margin-bottom: 2px;
     text-transform: uppercase;
     background: #9ab;
@@ -90,12 +90,13 @@
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.15385;
   margin: 0;
-  padding: 8px .8em;
+  padding: 8px 0.8em;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -113,7 +114,7 @@
 }
 
 .button-8:focus {
-  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
 }
 
 .button-8:active {
@@ -125,10 +126,10 @@
 @media screen and (max-width: 600px) {
   .sidebar {
     float: none;
-    margin-right:0;
-    width:auto;
-    border:0;
-    border-bottom:2px solid #000;
+    margin-right: 0;
+    width: auto;
+    border: 0;
+    border-bottom: 2px solid #000;
   }
 }
 
@@ -138,5 +139,49 @@
   color: white;
   &:hover {
     color: white;
+  }
+}
+
+.filmography {
+  margin: 4rem 0;
+  @include responsive(xsmall) {
+    margin: 2rem 0;
+  }
+  &__card {
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-shadow: 0 0 30px black;
+    &__img {
+      img {
+        width: 100%;
+      }
+    }
+    &__layer {
+      @include position(absolute, 0, 0, 0, 0, 100%, 100%);
+      @include align(flex, null, flex-end, null);
+      background: linear-gradient(to bottom, transparent 50%, $black);
+      padding: 2rem;
+      color: $white;
+      &__content {
+        @include align(flex, null, center, null);
+        &__movie {
+          font-size: 1.5rem;
+          margin-left: 0.4rem;
+          text-shadow: 1.5px 1.5px 1.5px black;
+        }
+      }
+    }
+    &__info {
+      @include position(absolute, 0, 0, null, null, 100%, 100%);
+      @include align(flex, center, center, null);
+      visibility: hidden;
+      transform: scale(0);
+      transition: all 0.1s linear;
+    }
+    &:hover &__info {
+      visibility: visible;
+      transform: scale(1.3);
+    }
   }
 }

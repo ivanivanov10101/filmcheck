@@ -2,11 +2,12 @@ import React, { Fragment } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import {imdbSrc, tmdbImageSrc, tmdbSrc} from "../../utils";
 import { Link } from "react-router-dom";
-import MovieList from "../MovieList";
 import ReadMoreCollapse from "../shared/ReadMoreCollapse";
+import PersonFilmographyCard from "./PersonFilmographyCard";
 
 const PersonBody = (person) => {
   let info = person.person;
+  console.log(info)
   return (
     <Fragment>
       <div className="person-wrapper">
@@ -14,7 +15,7 @@ const PersonBody = (person) => {
           <div className="sidebar__profilecard sidebar__profilecard__img">
             <LazyLoadImage src={tmdbImageSrc(info.profile_path, "h632")} />
           </div>
-          <div className="sidebar__biography"><ReadMoreCollapse content={info.biography}/></div>
+          <aside className="sidebar__biography"><ReadMoreCollapse content={info.biography}/></aside>
           <span className="sidebar__bottom">More details at: </span>
           <Link
             className="imdb_link"
@@ -39,7 +40,7 @@ const PersonBody = (person) => {
             {info ? (
               info.movie_credits?.cast.map((movie) => {
                 return (
-                  <MovieList
+                  <PersonFilmographyCard
                     movie={movie}
                     imageSrc={tmdbImageSrc(movie.poster_path, "w780")}
                     key={movie.id}
