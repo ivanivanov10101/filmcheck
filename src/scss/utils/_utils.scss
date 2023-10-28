@@ -30,6 +30,17 @@
   }
   &__control {
     @include control(5rem, 0, 1.5rem, $lightSilver-45);
+  }
+}
+
+.review-group {
+  margin-bottom: 1.3rem;
+  span {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  &__control {
+    @include control(5rem, 0, 1.5rem, $lightSilver-45);
     min-height: 10rem;
   }
 }

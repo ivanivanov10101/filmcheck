@@ -3,7 +3,7 @@ import { reducer } from "../../helpers/reducer";
 
 function ReadMoreCollapse({ content }) {
   const initialState = {
-    sliceLast: "180",
+    sliceLast: "300",
     read: false,
   };
   const [state, dispatch] = useReducer(reducer, initialState);

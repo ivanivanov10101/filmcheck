@@ -19,7 +19,7 @@ const ReviewModel = (props) => {
         <input
           type="text"
           name=""
-          className="group__control"
+          className="review-group__control"
           value={state.review}
           onChange={(e) => setState({ ...state, review: e.target.value })}
         />
