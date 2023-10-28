@@ -13,7 +13,7 @@ const PersonBody = (person) => {
       <div className="person-wrapper">
         <section className="sidebar">
           <div className="sidebar__profilecard sidebar__profilecard__img">
-            <LazyLoadImage src={tmdbImageSrc(info.profile_path, "h632")} />
+            <LazyLoadImage src={tmdbImageSrc(info.profile_path, "h632")}/>
           </div>
           <aside className="sidebar__biography"><ReadMoreCollapse content={info.biography}/></aside>
           <span className="sidebar__bottom">More details at: </span>

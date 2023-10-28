@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import Header from "../components/Header";
+import Header from "../components/shared/Header";
 import Footer from "../components/footer/Footer";
 import ProfileBody from "../components/ProfileBody";
 import { Fragment } from "react";

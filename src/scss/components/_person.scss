@@ -169,13 +169,21 @@
           font-size: 1.5rem;
           margin-left: 0.4rem;
           text-shadow: 1.5px 1.5px 1.5px black;
+          &__link {
+            color: white;
+            text-decoration: none;
+            &:hover {
+              cursor: pointer;
+            }
+          }
         }
       }
     }
     &__info {
-      @include position(absolute, 0, 0, null, null, 100%, 100%);
+      @include position(absolute, 50%, 50%, null, null, 1%, 1%);
       @include align(flex, center, center, null);
       visibility: hidden;
+      background-color: rgba(255, 0, 0, 0.32);
       transform: scale(0);
       transition: all 0.1s linear;
     }

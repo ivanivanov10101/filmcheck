@@ -1,4 +1,4 @@
-const FilmsPageDropDown = () => {
+const HeaderDropDown = () => {
   return (
     <select className="films-dropdown">
       <option value="Popular Movies">Popular Movies</option>
@@ -9,4 +9,4 @@ const FilmsPageDropDown = () => {
     </select>
   );
 };
-export default FilmsPageDropDown;
+export default HeaderDropDown;

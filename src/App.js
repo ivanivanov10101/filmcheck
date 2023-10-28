@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Toggle from "./components/Toggle";
+import Toggle from "./components/nav/Toggle";
 import React, { Suspense, useState } from "react";
-import Nav from "./components/Nav";
+import Nav from "./components/nav/Nav";
 import LoadingSpinner from "./components/shared/LoadingSpinner";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Films from "./pages/Films";
 import FilmPage from "./pages/FilmPage";
 import NewsEntry from "./components/news/NewsEntry";
-import ThemeToggle from "./components/ThemeToggle";
+import ThemeToggle from "./components/nav/ThemeToggle";
 import Providers from "./helpers/Providers";
 import Person from "./pages/Person";
 

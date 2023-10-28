@@ -4,7 +4,7 @@ import FooterLinks from "./FooterLinks";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer__container footer__container__block">
+      <div className="footer__container__block">
         <div className="row container">
           <div className="col-6 p-15 footer-links">
             <FooterLinks />

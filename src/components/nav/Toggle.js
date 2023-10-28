@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import NavContext from "../context/NavContext";
-import { NAV_TOGGLE } from "../context/types/NavTypes";
+import NavContext from "../../context/NavContext";
+import { NAV_TOGGLE } from "../../context/types/NavTypes";
 
 const Toggle = () => {
   const { state, dispatch } = useContext(NavContext);

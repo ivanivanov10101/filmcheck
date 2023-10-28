@@ -5,7 +5,7 @@ import Footer from "../components/footer/Footer";
 import { getPopularsFilmsPage } from "../api/tmbd-data";
 import { tmdbImageSrc } from "../utils";
 import ReactPaginate from "react-paginate";
-import FilmsPageDropDown from "../components/FilmsPageDropDown";
+import HeaderDropDown from "../components/shared/HeaderDropDown";
 
 const Films = () => {
   const heading = "Currently Popular";
@@ -35,7 +35,7 @@ const Films = () => {
     <Fragment>
       <SmallHeader />
       <div className="container movies__block">
-        {/*<h2 className="heading"><FilmsPageDropDown/></h2>*/}
+        {/*<h2 className="heading"><HeaderDropDown/></h2>*/}
         <h2 className="heading">{heading}</h2>
         <div className="row ml-minus-15 mr-minus-15">
           {isLoaded ? (

@@ -13,8 +13,8 @@ const MovieList = ({ movie, imageSrc }) => {
           />
         </div>
         <div className="movies__card__layer">
-          <div className="movies__card__layer__content movies__card__layer__content__movie">
-            {movie.title}
+          <div className="movies__card__layer__content__movie">
+            <Link className="movies__card__layer__content__movie__link" to={`/film/${movie.id}`}>{movie.title}</Link>
           </div>
         </div>
         <div className="movies__card__info">

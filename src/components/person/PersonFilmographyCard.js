@@ -13,8 +13,8 @@ const PersonFilmographyCard = ({ movie, imageSrc }) => {
           />
         </div>
         <div className="filmography__card__layer">
-          <div className="filmography__card__layer__content filmography__card__layer__content__movie">
-            {movie.title}
+          <div className="filmography__card__layer__content__movie">
+            <Link className="filmography__card__layer__content__movie__link" to={`/film/${movie.id}`}>{movie.title}</Link>
           </div>
         </div>
         <div className="filmography__card__info">

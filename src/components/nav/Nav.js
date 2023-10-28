@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import NavContext from "../context/NavContext";
+import NavContext from "../../context/NavContext";
 import { Fragment, useContext } from "react";
-import { NAV_TOGGLE } from "../context/types/NavTypes";
+import { NAV_TOGGLE } from "../../context/types/NavTypes";
 
 const Nav = ({ children }) => {
   const { state, dispatch } = useContext(NavContext);

@@ -1,7 +1,7 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
-import poster from "../data/img.avif";
-import logo from "../data/logo.png";
+import poster from "../../data/img.avif";
+import logo from "../../data/logo.png";
 
 const Header = ({ heading, paragraph, children, image }) => {
   const navigate = useNavigate();

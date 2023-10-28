@@ -138,7 +138,9 @@ export const getTrailer = async (mediaType, id) => {
 
 export const getPerson = async (id) => {
   try {
-    const { data } = await axiosClient.get(`/person/${id}?language=en-US&append_to_response=movie_credits`);
+    const { data } = await axiosClient.get(
+      `/person/${id}?language=en-US&append_to_response=movie_credits`,
+    );
 
     return data;
   } catch (error) {
@@ -148,3 +150,26 @@ export const getPerson = async (id) => {
   return [];
 };
 
+export const search = async (query, page = 1) => {
+  try {
+    const { data } = await axiosClient.get(`/search/multi`, {
+      params: {
+        query,
+        page,
+      },
+    });
+    return {
+      totalPages: data.total_pages,
+      totalResults: data.total_results,
+      films: data.results.map((val) => formatResult(val)),
+    };
+  } catch (error) {
+    console.error(error);
+  }
+
+  return {
+    totalPages: 0,
+    totalResults: 0,
+    films: [],
+  };
+};

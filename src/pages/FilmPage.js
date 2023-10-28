@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import Header from "../components/Header";
+import Header from "../components/shared/Header";
 import MovieInfo from "../components/MovieInfo";
 import MovieRecEntry from "../components/recs/MovieRecEntry";
 import Footer from "../components/footer/Footer";

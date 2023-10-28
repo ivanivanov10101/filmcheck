@@ -2,7 +2,7 @@ import { Fragment, useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Footer from "../footer/Footer";
-import Header from "../Header";
+import Header from "../shared/Header";
 import { DETAILS } from "../../context/types/MovieTypes";
 import NewsContext from "../../context/NewsContext";
 import NewsBody from "./NewsBody";
