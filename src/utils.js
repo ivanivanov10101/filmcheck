@@ -1,4 +1,7 @@
 import moment from "moment";
+import poster from "./data/img.avif";
+import poster2 from "./data/img2.jpg";
+import poster3 from "./data/img3.jpg";
 
 export const formatResult = (obj, mediaType) => {
   return {
@@ -14,6 +17,12 @@ export const formatResult = (obj, mediaType) => {
     genres: obj.genres,
     results: obj.results,
     imdb: obj.imdb_id,
+    budget: obj.budget,
+    homepage: obj.homepage,
+    prodcomp: obj.production_companies,
+    country: obj.production_countries,
+    revenue: obj.revenue,
+    tag: obj.tagline,
   };
 };
 
@@ -54,3 +63,9 @@ export const formatDateShort = (date) => {
 export const mergeClassName = (val1, val2) => {
   return val1 + " " + (val2 || "");
 };
+
+export const randomHeader = () => {
+  let posters = [poster, poster2, poster3]
+  const index = Math.floor(Math.random() * posters.length)
+  return posters[index];
+}

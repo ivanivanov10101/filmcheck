@@ -11,15 +11,16 @@ import ReviewModelSubmitted from "./reviews/ReviewModelSubmitted";
 import MovieSecondaryButtons from "./moviecomponents/MovieSecondaryButtons";
 import MovieRating from "./moviecomponents/MovieRating";
 import MovieInfoBox from "./moviecomponents/MovieInfoBox";
-import {formatDateShort, imdbSrc, tmdbImageSrc, tmdbSrc} from "../utils";
+import { formatDateShort, imdbSrc, tmdbImageSrc, tmdbSrc } from "../utils";
 import placeholder from "../data/placeholder-movieimage.png";
 import MovieReviews from "./moviecomponents/MovieReviews";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MovieInfo = ({ info, crew, cast, reviews }) => {
   const { dispatch } = useContext(ModalContext);
   const [reviewModal] = useState("reviewModal");
   const [reviewModalSubmitted] = useState("reviewModalSubmitted");
+  const image = tmdbImageSrc(info.posterPath, "w780");
   return (
     <div className="movie-info">
       <div className="container flex">
@@ -27,11 +28,7 @@ const MovieInfo = ({ info, crew, cast, reviews }) => {
           <div className="movies__card">
             <div className="movies__card__img">
               <LazyLoadImage
-                src={
-                  tmdbImageSrc(info.posterPath, "w780")
-                    ? tmdbImageSrc(info.posterPath, "w780")
-                    : placeholder
-                }
+                src={image ? image : placeholder}
                 alt={"movie poster"}
               />
             </div>
@@ -54,14 +51,14 @@ const MovieInfo = ({ info, crew, cast, reviews }) => {
           <Link
             className="imdb_link"
             target="_blank"
-            to={imdbSrc('title', info.imdb)}
+            to={imdbSrc("title", info.imdb)}
           >
             <button className="button-8">IMDB</button>
           </Link>
           <Link
             className="tmdb_link"
             target="_blank"
-            to={tmdbSrc('movie', info.id)}
+            to={tmdbSrc("movie", info.id)}
           >
             <button className="button-8">TMDB</button>
           </Link>
@@ -75,7 +72,7 @@ const MovieInfo = ({ info, crew, cast, reviews }) => {
           </div>
           <MovieInfoBox info={info} crew={crew} />
           <div className="stats movie-tabs">
-            <MovieTabs cast={cast} crew={crew} />
+            <MovieTabs info={info} cast={cast} crew={crew} />
           </div>
           <div className="stats movie-reviews">
             <MovieReviews reviews={reviews} />

@@ -86,6 +86,7 @@
           margin-top: 1rem;
           color: $white;
           font-size: 1.5rem;
+          text-shadow: 1px 1px 2px $black;
           @include responsive(small) {
             margin-top: 0.5rem;
             font-size: 1.4rem;

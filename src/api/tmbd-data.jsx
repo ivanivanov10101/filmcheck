@@ -117,7 +117,7 @@ export const getReviews = async (mediaType, id) => {
   return [];
 };
 
-export const getTrailer = async (mediaType, id) => {
+export const getTrailers = async (mediaType, id) => {
   try {
     const { data } = await axiosClient.get(`/${mediaType}/${id}/videos`);
 

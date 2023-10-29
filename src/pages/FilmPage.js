@@ -10,11 +10,9 @@ import {
   getMovie,
   getReviews,
   getSimilar,
-  getTrailer,
 } from "../api/tmbd-data";
-import { tmdbImageSrc } from "../utils";
+import {tmdbImageSrc} from "../utils";
 import LoadingSpinner from "../components/shared/LoadingSpinner";
-import { TrailerModal } from "../components/moviecomponents/TrailerModal";
 
 const FilmPage = () => {
   const { id } = useParams();
@@ -30,13 +28,6 @@ const FilmPage = () => {
   const [cast, setCast] = useState([]);
   const [similar, setSimilar] = useState([]);
   const [reviews, setReviews] = useState([]);
-  const [trailer, setTrailer] = useState("");
-
-  const movieTrailer = async (film) => {
-    const trailer = await getTrailer(film.mediaType, film.id);
-
-    setTrailer(`https://www.youtube.com/embed/${trailer[0].key}?autoplay=0`);
-  };
 
   useEffect(() => {
     setFilm(undefined);
@@ -76,10 +67,7 @@ const FilmPage = () => {
         <MovieRecEntry movies={similar} name={film.title} />
       )}
       <Footer />
-      {/*<TrailerModal*/}
-      {/*    onHide={() => movieTrailer('')}*/}
-      {/*    src={trailer}*/}
-      {/*></TrailerModal>*/}
+
     </Fragment>
   );
 };
