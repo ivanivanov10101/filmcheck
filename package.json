@@ -62,6 +62,7 @@
     ]
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "autoprefixer": "^10.4.16",
     "dotenv-webpack": "^8.0.1"
   }
