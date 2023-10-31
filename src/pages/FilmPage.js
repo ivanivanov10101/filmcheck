@@ -13,6 +13,7 @@ import {
 } from "../api/tmbd-data";
 import {tmdbImageSrc} from "../utils";
 import LoadingSpinner from "../components/shared/LoadingSpinner";
+import {useQuery} from "@tanstack/react-query";
 
 const FilmPage = () => {
   const { id } = useParams();
@@ -46,11 +47,16 @@ const FilmPage = () => {
     fetch();
   }, [currentPage, id]);
 
+  const query = useQuery({
+    queryFn: () => null,
+  })
   if (film === null) {
     return <></>;
   } else if (film === undefined) {
     return <LoadingSpinner />;
   }
+
+
   return (
     <Fragment>
       <Helmet>

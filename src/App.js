@@ -11,12 +11,15 @@ import NewsEntry from "./components/news/NewsEntry";
 import ThemeToggle from "./components/nav/ThemeToggle";
 import Providers from "./helpers/Providers";
 import Person from "./pages/Person";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
   function toggleDarkMode() {
     setDarkMode((modeToggle) => !modeToggle);
   }
+
+  const queryClient = new QueryClient();
   return (
     <div
       className={`
@@ -31,21 +34,23 @@ function App() {
           }
         >
           <Providers>
-            <Toggle />
-            <Nav>
-              <ThemeToggle
-                darkMode={darkMode}
-                toggleDarkMode={toggleDarkMode}
-              />
-            </Nav>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route exact path="/profile" element={<Profile />} />
-              <Route path="/films" element={<Films />} />
-              <Route path="/film/:id" element={<FilmPage />} />
-              <Route path="/news/:id" element={<NewsEntry />} />
-              <Route path="/person/:id" element={<Person />} />
-            </Routes>
+            <QueryClientProvider client={queryClient}>
+              <Toggle />
+              <Nav>
+                <ThemeToggle
+                  darkMode={darkMode}
+                  toggleDarkMode={toggleDarkMode}
+                />
+              </Nav>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route exact path="/profile" element={<Profile />} />
+                <Route path="/films" element={<Films />} />
+                <Route path="/film/:id" element={<FilmPage />} />
+                <Route path="/news/:id" element={<NewsEntry />} />
+                <Route path="/person/:id" element={<Person />} />
+              </Routes>
+            </QueryClientProvider>
           </Providers>
         </Suspense>
       </Router>
