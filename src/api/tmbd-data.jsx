@@ -21,12 +21,12 @@ axiosClient.interceptors.request.use((config) => {
   };
 });
 
-export const getTopRated = async (mediaType, page) => {
+export const getTopRated = async () => {
   try {
-    const { data } = await axiosClient.get(`/${mediaType}/top_rated`);
+    const { data } = await axiosClient.get(`/movie/top_rated`);
 
     return {
-      films: data.results.map((val) => formatResult(val, mediaType)),
+      films: data.results.map((val) => formatResult(val)),
     };
   } catch (error) {
     console.error(error);
@@ -65,11 +65,11 @@ export const getPopularsFilmsPage = async (page) => {
   return [];
 };
 
-export const getMovie = async (mediaType, id) => {
+export const getMovie = async (id) => {
   try {
-    const { data } = await axiosClient.get(`/${mediaType}/${id}`);
+    const { data } = await axiosClient.get(`/movie/${id}`);
 
-    return formatResult(data, mediaType);
+    return formatResult(data);
   } catch (error) {
     console.error(error);
   }
@@ -77,9 +77,9 @@ export const getMovie = async (mediaType, id) => {
   return [];
 };
 
-export const getCast = async (mediaType, id) => {
+export const getCast = async (id) => {
   try {
-    const { data } = await axiosClient.get(`/${mediaType}/${id}/credits`);
+    const { data } = await axiosClient.get(`/movie/${id}/credits`);
 
     return data;
   } catch (error) {
@@ -89,10 +89,10 @@ export const getCast = async (mediaType, id) => {
   return [];
 };
 
-export const getSimilar = async (mediaType, id) => {
+export const getSimilar = async (id) => {
   try {
     const { data } = await axiosClient.get(
-      `/${mediaType}/${id}/similar?language=en-US&page=1`,
+      `/movie/${id}/similar?language=en-US&page=1`,
     );
 
     return data;
@@ -103,10 +103,10 @@ export const getSimilar = async (mediaType, id) => {
   return [];
 };
 
-export const getReviews = async (mediaType, id) => {
+export const getReviews = async (id) => {
   try {
     const { data } = await axiosClient.get(
-      `/${mediaType}/${id}/reviews?language=en-US&page=1`,
+      `/movie/${id}/reviews?language=en-US&page=1`,
     );
 
     return data;

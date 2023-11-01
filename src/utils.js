@@ -3,12 +3,11 @@ import poster from "./data/img.avif";
 import poster2 from "./data/img2.jpg";
 import poster3 from "./data/img3.jpg";
 
-export const formatResult = (obj, mediaType) => {
+export const formatResult = (obj) => {
   return {
     id: obj.id,
     title: obj.title || obj.name,
     posterPath: obj.poster_path,
-    mediaType: mediaType || obj.mediaType,
     backdropPath: obj.backdrop_path,
     releaseDate: obj.release_date,
     runtime: obj.runtime,

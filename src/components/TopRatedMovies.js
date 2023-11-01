@@ -9,7 +9,7 @@ const TopRatedMovies = () => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
 
   const fetchTopRatedMovies = async () => {
-    setTopRatedMovies((await getTopRated("movie")).films);
+    setTopRatedMovies((await getTopRated()).films);
   };
   useEffect(() => {
     fetchTopRatedMovies();

@@ -13,7 +13,6 @@ import {
 } from "../api/tmbd-data";
 import {tmdbImageSrc} from "../utils";
 import LoadingSpinner from "../components/shared/LoadingSpinner";
-import {useQuery} from "@tanstack/react-query";
 
 const FilmPage = () => {
   const { id } = useParams();
@@ -34,22 +33,19 @@ const FilmPage = () => {
     setFilm(undefined);
 
     const fetch = async () => {
-      const film = await getMovie("movie", id);
+      const film = await getMovie(id);
       setFilm(film);
-      const cast = await getCast("movie", film.id);
+      const cast = await getCast(film.id);
       setCast(cast);
-      const similar = await getSimilar("movie", film.id);
+      const similar = await getSimilar(film.id);
       setSimilar(similar);
-      const reviews = await getReviews("movie", film.id);
+      const reviews = await getReviews(film.id);
       setReviews(reviews);
     };
 
     fetch();
   }, [currentPage, id]);
 
-  const query = useQuery({
-    queryFn: () => null,
-  })
   if (film === null) {
     return <></>;
   } else if (film === undefined) {
