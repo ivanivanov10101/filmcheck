@@ -29,28 +29,28 @@ const FilmPage = () => {
   const [similar, setSimilar] = useState([]);
   const [reviews, setReviews] = useState([]);
 
-  // useEffect(() => {
-  //   setFilm(undefined);
-  //
-  //   const fetch = async () => {
-  //     const film = await getMovie(id);
-  //     setFilm(film);
-  //     const cast = await getCast(film.id);
-  //     setCast(cast);
-  //     const similar = await getSimilar(film.id);
-  //     setSimilar(similar);
-  //     const reviews = await getReviews(film.id);
-  //     setReviews(reviews);
-  //   };
-  //
-  //   fetch();
-  // }, [currentPage, id]);
-  //
-  // if (film === null) {
-  //   return <></>;
-  // } else if (film === undefined) {
-  //   return <LoadingSpinner />;
-  // }
+  useEffect(() => {
+    setFilm(undefined);
+
+    const fetch = async () => {
+      const film = await getMovie(id);
+      setFilm(film);
+      const cast = await getCast(film.id);
+      setCast(cast);
+      const similar = await getSimilar(film.id);
+      setSimilar(similar);
+      const reviews = await getReviews(film.id);
+      setReviews(reviews);
+    };
+
+    fetch();
+  }, [currentPage, id]);
+
+  if (film === null) {
+    return <></>;
+  } else if (film === undefined) {
+    return <LoadingSpinner />;
+  }
 
 
   return (
