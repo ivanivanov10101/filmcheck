@@ -13,6 +13,7 @@ import {
 } from "../api/tmbd-data";
 import {tmdbImageSrc} from "../utils";
 import LoadingSpinner from "../components/shared/LoadingSpinner";
+import {Cast, Film} from "../interfaces";
 
 const FilmPage = () => {
   const { id } = useParams();
@@ -23,9 +24,9 @@ const FilmPage = () => {
 
   const currentPage = useLocation();
 
-  const [film, setFilm] = useState(null);
+  const [film, setFilm] = useState<Film | null | undefined>(null);
 
-  const [cast, setCast] = useState([]);
+  const [cast, setCast] = useState<Cast[]>([]);
   const [similar, setSimilar] = useState([]);
   const [reviews, setReviews] = useState([]);
 
@@ -33,14 +34,17 @@ const FilmPage = () => {
     setFilm(undefined);
 
     const fetch = async () => {
-      const film = await getMovie(id);
-      setFilm(film);
-      const cast = await getCast(film.id);
-      setCast(cast);
-      const similar = await getSimilar(film.id);
-      setSimilar(similar);
-      const reviews = await getReviews(film.id);
-      setReviews(reviews);
+      const film = await getMovie(parseInt(id as string));
+      if (film) {
+        setFilm(film);
+        const cast = await getCast(film.id);
+        setCast(cast);
+        const similar = await getSimilar(film.id);
+        setSimilar(similar);
+        const reviews = await getReviews(film.id);
+        setReviews(reviews);
+      }
+
     };
 
     fetch();
@@ -51,25 +55,27 @@ const FilmPage = () => {
   } else if (film === undefined) {
     return <LoadingSpinner />;
   }
-
-
   return (
     <Fragment>
       <Helmet>
         <title>{film.title}</title>
       </Helmet>
-      <Header image={tmdbImageSrc(film.backdropPath, "original")}></Header>
-      <MovieInfo
-        info={film}
-        crew={cast.crew}
-        cast={cast.cast}
-        reviews={reviews.results}
-      />
-      {similar.length !== 0 && (
-        <MovieRecEntry movies={similar} name={film.title} />
-      )}
-      <Footer />
-
+      <Header
+        image={tmdbImageSrc(film.backdropPath, "original")}
+        heading={undefined}
+        paragraph={undefined}
+        children={undefined}
+      ></Header>
+      {/*<MovieInfo*/}
+      {/*  info={film}*/}
+      {/*  crew={cast.crew}*/}
+      {/*  cast={cast.cast}*/}
+      {/*  reviews={reviews.results}*/}
+      {/*/>*/}
+      {/*{similar.length !== 0 && (*/}
+      {/*  <MovieRecEntry movies={similar} name={film.title} />*/}
+      {/*)}*/}
+      {/*<Footer />*/}
     </Fragment>
   );
 };
