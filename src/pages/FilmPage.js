@@ -1,18 +1,14 @@
-import { Fragment, useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { Fragment, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Header from "../components/shared/Header";
 import MovieInfo from "../components/MovieInfo";
 import MovieRecEntry from "../components/recs/MovieRecEntry";
 import Footer from "../components/footer/Footer";
-import {
-  getCast,
-  getMovie,
-  getReviews,
-  getSimilar,
-} from "../api/tmbd-data";
-import {tmdbImageSrc} from "../utils";
+import { getCast, getMovie, getReviews, getSimilar } from "../api/tmbd-data";
+import { tmdbImageSrc } from "../utils";
 import LoadingSpinner from "../components/shared/LoadingSpinner";
+import { useQuery } from "@tanstack/react-query";
 
 const FilmPage = () => {
   const { id } = useParams();
@@ -21,55 +17,57 @@ const FilmPage = () => {
     window.scrollTo(0, 0);
   }, [id]);
 
-  const currentPage = useLocation();
+  const {
+    isLoading,
+    error,
+    data: film,
+  } = useQuery({
+    queryKey: ["film"],
+    queryFn: async () => {
+      return await getMovie(id);
+    },
+  });
 
-  const [film, setFilm] = useState(null);
+  const { data: cast } = useQuery({
+    queryKey: ["cast"],
+    queryFn: async () => {
+      return await getCast(id);
+    },
+  });
 
-  const [cast, setCast] = useState([]);
-  const [similar, setSimilar] = useState([]);
-  const [reviews, setReviews] = useState([]);
+  const { data: similar } = useQuery({
+    queryKey: ["similar"],
+    queryFn: async () => {
+      return await getSimilar(id);
+    },
+  });
 
-  useEffect(() => {
-    setFilm(undefined);
+  const { data: review } = useQuery({
+    queryKey: ["reviews"],
+    queryFn: async () => {
+      return await getReviews(id);
+    },
+  });
 
-    const fetch = async () => {
-      const film = await getMovie(id);
-      setFilm(film);
-      const cast = await getCast(film.id);
-      setCast(cast);
-      const similar = await getSimilar(film.id);
-      setSimilar(similar);
-      const reviews = await getReviews(film.id);
-      setReviews(reviews);
-    };
-
-    fetch();
-  }, [currentPage, id]);
-
-  if (film === null) {
-    return <></>;
-  } else if (film === undefined) {
-    return <LoadingSpinner />;
-  }
-
+  if (isLoading) return <LoadingSpinner />;
+  if (error) console.log(error.message);
 
   return (
     <Fragment>
       <Helmet>
-        <title>{film.title}</title>
+        <title>{film?.title}</title>
       </Helmet>
-      <Header image={tmdbImageSrc(film.backdropPath, "original")}></Header>
+      <Header image={tmdbImageSrc(film?.backdropPath, "original")}></Header>
       <MovieInfo
         info={film}
-        crew={cast.crew}
-        cast={cast.cast}
-        reviews={reviews.results}
+        crew={cast?.crew}
+        cast={cast?.cast}
+        reviews={review?.results}
       />
-      {similar.length !== 0 && (
-        <MovieRecEntry movies={similar} name={film.title} />
+      {similar?.length !== 0 && (
+        <MovieRecEntry movies={similar} name={film?.title} />
       )}
       <Footer />
-
     </Fragment>
   );
 };

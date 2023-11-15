@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {BrowserRouter as Router, createBrowserRouter, Route, Routes} from "react-router-dom";
 import Toggle from "./components/nav/Toggle";
 import React, { Suspense, useState } from "react";
 import Nav from "./components/nav/Nav";
@@ -20,6 +20,68 @@ function App() {
   }
 
   const queryClient = new QueryClient();
+
+  // const router = createBrowserRouter([
+  //   {
+  //     path: '/',
+  //     element: <RootLayout/>,
+  //     errorElement: <ErrorPage/>,
+  //     children: [
+  //       { index: true, element: <Home/> },
+  //       {
+  //         path: 'profile',
+  //         element: <Profile/>,
+  //       },
+  //       {
+  //         path: 'films',
+  //         element: <Films/>
+  //       },
+  //       {
+  //         path: 'film',
+  //         element: <FilmRootLayout/>,
+  //         children: [
+  //           {
+  //             index: true,
+  //             element: <FilmPage/>,
+  //             loader: movieLoader,
+  //           },
+  //           {
+  //             path: ':id',
+  //           }
+  //         ]
+  //       },
+  //       {
+  //         path: 'news',
+  //         element: <NewsRootLayout/>,
+  //         children: [
+  //           {
+  //             index: true,
+  //             element: <NewsEntry/>,
+  //             loader: newsLoader,
+  //           },
+  //           {
+  //             path: ':id',
+  //           }
+  //         ]
+  //       },
+  //       {
+  //         path: 'person',
+  //         element: <PersonRootLayout/>,
+  //         children: [
+  //           {
+  //             index: true,
+  //             element: <Person/>,
+  //             loader: personLoader,
+  //           },
+  //           {
+  //             path: ':id',
+  //           }
+  //         ]
+  //       }
+  //     ]
+  //   }
+  // ])
+
   return (
     <div
       className={`

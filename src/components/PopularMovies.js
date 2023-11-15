@@ -1,21 +1,18 @@
-import { useEffect, useState } from "react";
 import MovieList from "./MovieList";
 import HomeInfoTab from "./HomeInfoTab";
 import { tmdbImageSrc } from "../utils";
 import { getPopulars } from "../api/tmbd-data";
+import { useQuery } from "@tanstack/react-query";
 
 const PopularMovies = () => {
   const heading = "Popular Movies";
 
-  const [popularMovies, setPopularMovies] = useState([]);
-
-  const fetchPopularMovies = async () => {
-    const movies = await getPopulars("movie");
-    setPopularMovies(movies);
-  };
-  useEffect(() => {
-    fetchPopularMovies();
-  }, []);
+  const { data: popular } = useQuery({
+    queryKey: ["popular"],
+    queryFn: async () => {
+      return await getPopulars("movie");
+    },
+  });
 
   return (
     <div className="movies">
@@ -24,8 +21,8 @@ const PopularMovies = () => {
         <div className="movies__block">
           <h2 className="heading">{heading}</h2>
           <div className="row ml-minus-15 mr-minus-15">
-            {popularMovies
-              .map((movie) => (
+            {popular
+              ?.map((movie) => (
                 <MovieList
                   movie={movie}
                   imageSrc={tmdbImageSrc(movie.posterPath, "w780")}

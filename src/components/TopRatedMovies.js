@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
 import MovieList from "./MovieList";
 import { getTopRated } from "../api/tmbd-data";
 import { tmdbImageSrc } from "../utils";
+import { useQuery } from "@tanstack/react-query";
 
 const TopRatedMovies = () => {
   const heading = "Top Rated Movies";
 
-  const [topRatedMovies, setTopRatedMovies] = useState([]);
-
-  const fetchTopRatedMovies = async () => {
-    setTopRatedMovies((await getTopRated()).films);
-  };
-  useEffect(() => {
-    fetchTopRatedMovies();
-  }, []);
+  const { data: top } = useQuery({
+    queryKey: ["top"],
+    queryFn: async () => {
+      return (await getTopRated()).films;
+    },
+  });
 
   return (
     <div className="movies">
@@ -21,8 +19,8 @@ const TopRatedMovies = () => {
         <div className="movies__block">
           <h2 className="heading">{heading}</h2>
           <div className="row ml-minus-15 mr-minus-15">
-            {topRatedMovies
-              .map((movie) => (
+            {top
+              ?.map((movie) => (
                 <MovieList
                   movie={movie}
                   imageSrc={tmdbImageSrc(movie.posterPath, "w342")}

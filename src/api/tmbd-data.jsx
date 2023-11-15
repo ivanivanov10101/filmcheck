@@ -4,7 +4,7 @@ import { formatResult } from "../utils";
 const API_KEY = process.env.REACT_APP_API_KEY;
 const API_REA_TOKEN = process.env.REACT_APP_API_REA_TOKEN;
 
-const axiosClient = axios.create({
+export const axiosClient = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
 });
 

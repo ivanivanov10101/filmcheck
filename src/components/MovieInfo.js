@@ -20,7 +20,8 @@ const MovieInfo = ({ info, crew, cast, reviews }) => {
   const { dispatch } = useContext(ModalContext);
   const [reviewModal] = useState("reviewModal");
   const [reviewModalSubmitted] = useState("reviewModalSubmitted");
-  const image = tmdbImageSrc(info.posterPath, "w780");
+  const image = tmdbImageSrc(info?.posterPath, "w780");
+
   return (
     <div className="movie-info">
       <div className="container flex">
@@ -47,7 +48,7 @@ const MovieInfo = ({ info, crew, cast, reviews }) => {
             </button>
           </div>
           <MovieSecondaryButtons />
-          <MovieRating info={info.averageVote} />
+          <MovieRating info={info?.averageVote} />
           <Link
             className="imdb_link"
             target="_blank"

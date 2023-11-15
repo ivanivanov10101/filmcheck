@@ -139,7 +139,7 @@ const MovieTabs = ({ info, cast, crew }) => {
           {" "}
           <span className="members">
             Production Countries:{" "}
-            {info &&
+            {info.country &&
               info.country.map((detail, i) => (
                 <span key={i}>{(i ? ", " : "") + detail.name}</span>
               ))}
