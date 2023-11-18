@@ -26,6 +26,7 @@
     "react-number-format": "^5.3.1",
     "react-paginate": "^8.2.0",
     "react-router-dom": "^6.15.0",
+    "react-scripts": "5.0.1",
     "react-select": "^5.8.0",
     "react-simple-star-rating": "^5.1.7",
     "react-tabs": "^6.0.2",
@@ -34,11 +35,12 @@
     "web-vitals": "^3.4.0"
   },
   "scripts": {
-    "start": "vite",
+    "start": "react-scripts start",
     "scss": "sass src/main.scss src/main.css --watch --no-source-map --style compressed",
     "dev": "concurrently \" npm start \" \" npm run scss \"",
-    "build": "vite build",
-    "serve": "vite preview",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "precommit": "npx prettier --write .",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -63,9 +65,7 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
-    "@vitejs/plugin-react": "^4.2.0",
     "autoprefixer": "^10.4.16",
-    "dotenv-webpack": "^8.0.1",
-    "vite": "^5.0.0"
+    "dotenv-webpack": "^8.0.1"
   }
 }
