@@ -35,7 +35,6 @@ const Films = () => {
     <Fragment>
       <SmallHeader />
       <div className="container movies__block">
-<<<<<<< HEAD
         {/*<h2 className="heading">*/}
         {/*  <HeaderDropDown />*/}
         {/*</h2>*/}
@@ -43,10 +42,6 @@ const Films = () => {
         {/*  <DownshiftDropdown />*/}
         {/*</h2>*/}
         <h2 className="heading">{heading}</h2>
-=======
-        <h2 className="heading"><HeaderDropDown/></h2>
-        {/*<h2 className="heading">{heading}</h2>*/}
->>>>>>> parent of 07b1db2 (minor fixes)
         <div className="row ml-minus-15 mr-minus-15">
           {isLoaded ? (
             popularMovies.results.map((movie) => {
