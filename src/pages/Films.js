@@ -6,13 +6,12 @@ import { getPopularsFilmsPage } from "../api/tmbd-data";
 import { tmdbImageSrc } from "../utils";
 import ReactPaginate from "react-paginate";
 import HeaderDropDown from "../components/shared/HeaderDropDown";
-import DownshiftDropdown from "../components/shared/DownshiftDropdown";
 
 const Films = () => {
   const heading = "Currently Popular";
 
   const [popularMovies, setPopularMovies] = useState([]);
-  const pageCount = 500 ;//hard limit by the API, stated in the support pages
+  const [pageCount, setPageCount] = useState(0);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -20,6 +19,7 @@ const Films = () => {
   const fetchPopularMovies = async (page) => {
     const movies = await getPopularsFilmsPage(page);
     setPopularMovies(movies);
+    setPageCount(500); //hard limit by the API, stated in the support pages
     setIsLoaded(true);
   };
 
@@ -35,13 +35,10 @@ const Films = () => {
     <Fragment>
       <SmallHeader />
       <div className="container movies__block">
-        {/*<h2 className="heading">*/}
-        {/*  <HeaderDropDown />*/}
-        {/*</h2>*/}
-        {/*<h2 className="heading">*/}
-        {/*  <DownshiftDropdown />*/}
-        {/*</h2>*/}
-        <h2 className="heading">{heading}</h2>
+        <h2 className="heading">
+          <HeaderDropDown />
+        </h2>
+        {/*<h2 className="heading">{heading}</h2>*/}
         <div className="row ml-minus-15 mr-minus-15">
           {isLoaded ? (
             popularMovies.results.map((movie) => {
