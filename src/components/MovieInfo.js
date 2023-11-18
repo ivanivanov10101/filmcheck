@@ -69,7 +69,7 @@ const MovieInfo = ({ info, crew, cast, reviews }) => {
             {formatDateShort(info.releaseDate)}
           </div>
           <div className="header__contents__text__child__movie-page stats-position-name">
-            {info?.title}
+            {info.title}
           </div>
           <MovieInfoBox info={info} crew={crew} />
           <div className="stats movie-tabs">

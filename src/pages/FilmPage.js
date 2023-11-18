@@ -22,28 +22,28 @@ const FilmPage = () => {
     error,
     data: film,
   } = useQuery({
-    queryKey: ["film", id],
+    queryKey: ["film"],
     queryFn: async () => {
       return await getMovie(id);
     },
   });
 
   const { data: cast } = useQuery({
-    queryKey: ["cast", id],
+    queryKey: ["cast"],
     queryFn: async () => {
       return await getCast(id);
     },
   });
 
   const { data: similar } = useQuery({
-    queryKey: ["similar", id],
+    queryKey: ["similar"],
     queryFn: async () => {
       return await getSimilar(id);
     },
   });
 
   const { data: review } = useQuery({
-    queryKey: ["reviews", id],
+    queryKey: ["reviews"],
     queryFn: async () => {
       return await getReviews(id);
     },
