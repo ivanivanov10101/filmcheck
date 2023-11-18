@@ -8,7 +8,7 @@ const HeaderDropDown = () => {
   ];
 
   return (
-    <div style={{ width: "20rem"}}>
+    <div style={{ width: "20rem" }}>
       <Select
         styles={{
           option: (baseStyles, state) => ({
@@ -16,8 +16,7 @@ const HeaderDropDown = () => {
             color: "white",
             width: "inherit",
             background: state.isFocused ? "#7ad76a" : "#18c50f",
-            fontFamily: "Roboto Light, sans-serif",
-            fontSize: "0.85em",
+            fontFamily: "Roboto"
           }),
           control: (baseStyles, state) => ({
             ...baseStyles,
@@ -27,9 +26,7 @@ const HeaderDropDown = () => {
             borderColor: state.isFocused ? "transparent" : "transparent",
             "&:hover": {
               borderColor: state.isFocused ? "transparent" : "transparent"
-            },
-            fontSize: "1em",
-            fontFamily: "Roboto Light, sans-serif",
+            }
           }),
           menuList: (baseStyles, state) => ({
             ...baseStyles,
