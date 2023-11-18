@@ -9,21 +9,21 @@ const MovieInfoBox = ({ info, crew }) => {
       <div className="stats directed-by">
         Directed by:{" "}
         <div className="stats movie-info-import-data-color">
-          {director && director[0].name}
+          {director && director[0]?.name}
         </div>
       </div>
-      <div className="summary">{info.overview}</div>
+      <div className="summary">{info?.overview}</div>
       <div className="stats-minor-info">
         <div className="stats runtime">
           Runtime:{" "}
           <div className="stats movie-info-import-data-color">
-            {info.runtime} min.
+            {info?.runtime} min.
           </div>
         </div>
         <div className="stats genres">
           Genres:{" "}
           <div className="stats movie-info-import-data-color">
-            {info.genres.map((genre, id) => {
+            {info?.genres.map((genre, id) => {
               return <span key={id}>{(id ? ", " : "") + genre.name}</span>;
             })}
           </div>
