@@ -11,7 +11,7 @@ const FooterLinks = () => {
   const { pages } = state;
   return (
     <div className="row">
-      <div className="col-4 p-15">
+      <div className="col-4">
         <ShowFooterLinks links={pages} />
       </div>
     </div>

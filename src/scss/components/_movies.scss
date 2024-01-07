@@ -19,12 +19,8 @@
       text-transform: capitalize;
     }
     &::after {
-      position: absolute;
+      @include position(absolute, null, 0, -0.5rem, null, 40%, 0.2rem);
       content: "";
-      bottom: -0.5rem;
-      left: 0;
-      width: 40%;
-      height: 0.2rem;
       background: $mainColor1;
       @include responsive(large) {
         width: 50%;
