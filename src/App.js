@@ -12,6 +12,7 @@ import ThemeToggle from "./components/nav/ThemeToggle";
 import Providers from "./helpers/Providers";
 import Person from "./pages/Person";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import SearchResultPage from "./pages/SearchResultPage";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -111,6 +112,7 @@ function App() {
                 <Route path="/film/:id" element={<FilmPage />} />
                 <Route path="/news/:id" element={<NewsEntry />} />
                 <Route path="/person/:id" element={<Person />} />
+                <Route path="/search/" element={<SearchResultPage />} />
               </Routes>
             </QueryClientProvider>
           </Providers>

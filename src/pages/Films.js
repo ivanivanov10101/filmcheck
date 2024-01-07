@@ -35,8 +35,8 @@ const Films = () => {
     <Fragment>
       <SmallHeader />
       <div className="container movies__block">
-        <h2 className="heading"><HeaderDropDown/></h2>
-        {/*<h2 className="heading">{heading}</h2>*/}
+        {/*<h2 className="heading"><HeaderDropDown/></h2>*/}
+        <h2 className="heading">{heading}</h2>
         <div className="row ml-minus-15 mr-minus-15">
           {isLoaded ? (
             popularMovies.results.map((movie) => {

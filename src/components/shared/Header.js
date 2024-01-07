@@ -2,6 +2,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 import logo from "../../data/logo.png";
 import {randomHeader} from "../../utils";
+import poster from "../../data/img.avif";
+
 
 
 const Header = ({ heading, paragraph, children, image }) => {
@@ -13,14 +15,14 @@ const Header = ({ heading, paragraph, children, image }) => {
     <div className="header">
       <div className="container">
         <div className="header__logo">
-          <LazyLoadImage src={logo} alt="logo-image" onClick={goToHome} />
+          <LazyLoadImage src={logo} alt="Site Logo" onClick={goToHome} />
         </div>
       </div>
       <div className="header__image">
         {image ? (
           <img src={image} alt={image} />
         ) : (
-          <img src={randomHeader()} alt="poster" />
+          <img src={poster} alt="poster" />
         )}
       </div>
       <div className="header__contents">

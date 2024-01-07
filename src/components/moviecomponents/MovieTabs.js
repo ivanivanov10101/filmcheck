@@ -6,14 +6,14 @@ import { Tooltip } from "react-tooltip";
 import { NumericFormat } from "react-number-format";
 
 const MovieTabs = ({ info, cast, crew }) => {
-
   // let grouped = []
   // grouped = crew?.reduce(function (r, a) {
   //   r[a.job] = r[a.job] || [];
   //   r[a.job].push(a);
   //   return r;
   // }, [])
-  let not_available = "Not available"
+  console.log(info)
+  let not_available = "Not available";
   return (
     <Tabs>
       <TabList>
@@ -128,7 +128,7 @@ const MovieTabs = ({ info, cast, crew }) => {
           {" "}
           <span className="members">
             Production Companies:{" "}
-            {info.prodcomp
+            {!info.prodcomp
               ? info.prodcomp.map((detail, i) => (
                   <span key={i}>{(i ? ", " : "") + detail.name}</span>
                 ))
@@ -139,10 +139,11 @@ const MovieTabs = ({ info, cast, crew }) => {
           {" "}
           <span className="members">
             Production Countries:{" "}
-            {info.country &&
-              info.country.map((detail, i) => (
-                <span key={i}>{(i ? ", " : "") + detail.name}</span>
-              ))}
+            {!info.country
+              ? info.country.map((detail, i) => (
+                  <span key={i}>{(i ? ", " : "") + detail.name}</span>
+                ))
+              : not_available}
           </span>
         </div>
       </TabPanel>

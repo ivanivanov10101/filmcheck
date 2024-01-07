@@ -1,0 +1,29 @@
+.search-result {
+  display: flex;
+  padding: 10px 10px;
+}
+
+.search-result:hover {
+  background-color: #efefef;
+}
+
+.poster {
+  width: 5rem;
+  margin-right: 10px;
+}
+
+.movie-poster {
+  width: inherit;
+  height: 100%;
+}
+
+.movie-text {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  font-size: 1.6rem;
+}
+
+.release-date {
+  margin-left: 2px;
+}

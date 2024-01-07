@@ -7,8 +7,11 @@ function ReadMoreCollapse({ content }) {
     read: false,
   };
   const [state, dispatch] = useReducer(reducer, initialState);
+
   if (!content) return null;
+
   const slicedContent = content.substring(0, state.sliceLast);
+
   const readMore = () => {
     dispatch({ type: "READ_MORE" });
   };
@@ -19,8 +22,6 @@ function ReadMoreCollapse({ content }) {
     <>
       <p className="content">
         {slicedContent}
-
-        {/* CUT THE COMMENT AND RED MORE SOLUTION */}
         {content.length > "180" ? <>{!state.read ? "..." : ""}</> : ""}
       </p>
       {content.length > "180" ? (

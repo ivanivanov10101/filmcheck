@@ -1,8 +1,8 @@
 import axios from "axios";
 import { formatResult } from "../utils";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
-const API_REA_TOKEN = process.env.REACT_APP_API_REA_TOKEN;
+export const API_KEY = process.env.REACT_APP_API_KEY;
+export const API_REA_TOKEN = process.env.REACT_APP_API_REA_TOKEN;
 
 export const axiosClient = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
@@ -150,26 +150,16 @@ export const getPerson = async (id) => {
   return [];
 };
 
-export const search = async (query, page = 1) => {
+export const getSearhedMovies = async (term) => {
   try {
-    const { data } = await axiosClient.get(`/search/multi`, {
-      params: {
-        query,
-        page,
-      },
-    });
-    return {
-      totalPages: data.total_pages,
-      totalResults: data.total_results,
-      films: data.results.map((val) => formatResult(val)),
-    };
+    const { data } = await axiosClient.get(
+      `/search/movie?query=${term}&include_adult=true&language=en_US&page=1`,
+    );
+
+    return data;
   } catch (error) {
     console.error(error);
   }
 
-  return {
-    totalPages: 0,
-    totalResults: 0,
-    films: [],
-  };
+  return [];
 };

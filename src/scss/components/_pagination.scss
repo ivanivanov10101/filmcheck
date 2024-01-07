@@ -1,4 +1,4 @@
-.paginate-container{
+.paginate-container {
   display: flex;
   list-style: none;
   margin-bottom: 2rem;
@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.page{
+.page {
   padding: 0 12px;
   height: 32px;
   text-align: center;
@@ -23,7 +23,8 @@
   cursor: pointer;
   &:hover {
     background-color: rgba(166, 166, 166, 0.42);
-    cursor: pointer;  }
+    cursor: pointer;
+  }
   &__break {
     align-items: center;
     padding-top: 2rem;
@@ -33,29 +34,28 @@
   }
 }
 
-.disabled{
+.disabled {
   cursor: not-allowed;
-
 }
 
-.active{
+.active {
   border: 2px solid #000;
   font-weight: bold;
   background-color: #7f8c8d;
 }
 
-.previous{
+.previous {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 6px;
   cursor: pointer;
 }
 
-.break{
+.break {
   padding: 10px;
 }
 
-.next{
+.next {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 6px;

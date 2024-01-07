@@ -26,18 +26,22 @@ const HeaderDropDown = () => {
             borderColor: state.isFocused ? "transparent" : "transparent",
             "&:hover": {
               borderColor: state.isFocused ? "transparent" : "transparent"
-            }
+            },
+          }),
+          valueContainer: (baseStyles, state) => ({
+            ...baseStyles,
+            paddingLeft: 0,
+            paddingRight: 0,
           }),
           menuList: (baseStyles, state) => ({
             ...baseStyles,
             padding: 0,
             borderRadius: 5,
-            boxShadow: "0 3px 55px 1px black"
+            boxShadow: "0 3px 55px 1px black",
 
           }),
           menu: (baseStyles, state) => ({
             ...baseStyles,
-
           }),
         }}
         theme={(theme) => ({
