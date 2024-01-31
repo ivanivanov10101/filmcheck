@@ -1,7 +1,9 @@
 import React, { Fragment } from "react";
 import SearchSummarySidebar from "./SearchSummarySidebar";
+import {useParams} from "react-router-dom";
 
-const SearchBody = () => {
+const SearchBody = (props) => {
+  const params = useParams();
   return (
     <Fragment>
       <div className="person-wrapper">
@@ -9,7 +11,7 @@ const SearchBody = () => {
           <SearchSummarySidebar/>
         </section>
         <section className="films">
-          TO FINISH
+          <h1>Searching for: {params.query}</h1>
         </section>
       </div>
     </Fragment>

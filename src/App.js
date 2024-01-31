@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, createBrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Toggle from "./components/nav/Toggle";
 import React, { Suspense, useState } from "react";
 import Nav from "./components/nav/Nav";
@@ -112,7 +112,7 @@ function App() {
                 <Route path="/film/:id" element={<FilmPage />} />
                 <Route path="/news/:id" element={<NewsEntry />} />
                 <Route path="/person/:id" element={<Person />} />
-                <Route path="/search/" element={<SearchResultPage />} />
+                <Route path="/search/:query" element={<SearchResultPage />} />
               </Routes>
             </QueryClientProvider>
           </Providers>

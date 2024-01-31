@@ -65,7 +65,7 @@
     &__layer {
       @include position(absolute, 0, 0, 0, 0, 100%, 100%);
       @include align(flex, null, flex-end, null);
-      background: linear-gradient(to bottom, transparent 50%, $black);
+      background: linear-gradient(to bottom, transparent 80%, $black);
       padding: 2rem;
       color: $white;
       &__content {

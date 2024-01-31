@@ -8,7 +8,7 @@ export const SearchResult = ({ result }) => {
       className="movies__card__layer__content__movie__link"
       to={`/film/${result?.id}`}
     >
-      <div className="search-result">
+      <li className="search-result">
         <div className="poster">
           {result?.poster_path ? (
             <img
@@ -35,7 +35,7 @@ export const SearchResult = ({ result }) => {
             ""
           )}
         </div>
-      </div>
+      </li>
     </Link>
   );
 };
